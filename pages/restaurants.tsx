@@ -186,13 +186,16 @@ export default function Restaurants() {
         <Banner />
         <FlatList
           mt={8}
+          // @ts-ignore
           contentContainerStyle={{
             alignItems: "center",
           }}
           w="100%"
           numColumns={noColumn}
           data={list}
+          // @ts-ignore
           keyExtractor={(item, index) => "key" + index}
+          // @ts-ignore
           renderItem={({ item }) => <RestaurantCard item={item} />}
           key={noColumn}
         />
