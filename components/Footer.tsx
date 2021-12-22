@@ -1,12 +1,9 @@
 import React from "react";
 import {
   Box,
-  Button,
   Divider,
-  Hidden,
   HStack,
   Icon,
-  Input,
   Link,
   Text,
   VStack,
@@ -16,8 +13,6 @@ import {
 import {
   Entypo,
   MaterialCommunityIcons,
-  MaterialIcons,
-  Octicons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
 
@@ -75,7 +70,10 @@ export default function Footer(props: any) {
               <Text fontWeight={"normal"} fontSize={"18px"}>
                 India
               </Text>
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
                   size="5"
@@ -288,7 +286,10 @@ export default function Footer(props: any) {
               SOCIAL LINKS
             </Text>
             <HStack space="2">
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Icon
                   size="6"
                   as={Entypo}
@@ -297,7 +298,10 @@ export default function Footer(props: any) {
                   _dark={{ color: "coolGray.500" }}
                 />
               </Pressable>
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Icon
                   size="6"
                   as={Entypo}
@@ -306,7 +310,10 @@ export default function Footer(props: any) {
                   _dark={{ color: "coolGray.500" }}
                 />
               </Pressable>
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Icon
                   size="6"
                   as={Entypo}
@@ -317,7 +324,10 @@ export default function Footer(props: any) {
               </Pressable>
             </HStack>
             <VStack flex="1" w="100%" mt="2" space={{ base: "2", md: 0 }}>
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Image
                   source={{
                     uri: "https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png",
@@ -328,7 +338,10 @@ export default function Footer(props: any) {
                   h="50px"
                 />
               </Pressable>
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable
+                //@ts-ignore
+                onPress={() => console.log("hello")}
+              >
                 <Image
                   source={{
                     uri: "https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png",

@@ -10,30 +10,30 @@ import {
   Icon,
 } from "native-base";
 
-import Delivery from "../components/Delivery";
 import DiningOut from "../components/DiningOut";
-import Nightlife from "../components/Nightlife";
 import { Ionicons, MaterialIcons, Octicons } from "@expo/vector-icons";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function GoForMeal(props: any) {
   const [tabName, setTabName] = React.useState("Dining Out");
 
   return (
     <Box
-      shadow={4}
-      flexGrow={1}
+      alignItems="center"
       _light={{
-        bg: "white",
+        bg: "coolGray.50",
         borderColor: "coolGray.200",
       }}
       _dark={{
         bg: "coolGray.900",
         borderColor: "coolGray.800",
       }}
+      w="100%"
     >
-      <VStack>
-        <HStack bg="white" pl="5" pt="2">
+      <Header />
+      <VStack w="80%">
+        <HStack bg="coolGray.50" pl="5" pt="2">
           <Link
             href="#"
             isUnderlined={false}
@@ -82,7 +82,7 @@ export default function GoForMeal(props: any) {
           space={{ base: 40, md: 40, lg: 40 }}
           alignItems={{ lg: "center" }}
           _light={{
-            bg: "white",
+            bg: "coolGray.50",
             borderColor: "coolGray.200",
           }}
           flexWrap="wrap"
@@ -94,7 +94,7 @@ export default function GoForMeal(props: any) {
             pt={2}
             px={{ base: 4, md: 4, lg: 0 }}
             flexWrap="wrap"
-            w={{ base: "60%", md: "60%", lg: "60%" }}
+            w={{ base: "60%", md: "60%", lg: "100%" }}
           >
             <Pressable
               p="2"
@@ -255,9 +255,9 @@ export default function GoForMeal(props: any) {
             </Pressable>
           </HStack>
         </HStack>
-        {tabName == "Delivery" ? <Delivery /> : null}
+        {tabName == "Delivery" ? <DiningOut /> : null}
         {tabName == "Dining Out" ? <DiningOut /> : null}
-        {tabName == "Nightlife" ? <Nightlife /> : null}
+        {tabName == "Nightlife" ? <DiningOut /> : null}
         <HStack px="5" pt="8" space="4" flexWrap={"wrap"}>
           <Link
             _hover={{ bg: "#F8F8F8" }}
