@@ -41,8 +41,8 @@ const Links_ForYou = ["Privacy", "Terms", "Security", "Sitemap"];
 
 export default function Footer(props: any) {
   return (
-    <Box bg="#F8F8F8" p="5">
-      <VStack>
+    <Box bg="#F8F8F8" p="5" w="100%" mt={4}>
+      <VStack px="9%">
         <HStack
           mb="8"
           alignItems={"center"}

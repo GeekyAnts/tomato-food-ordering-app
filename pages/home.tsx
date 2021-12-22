@@ -11,7 +11,9 @@ import {
   Input,
   Pressable,
 } from "native-base";
+import { useRouter } from "next/router";
 import { AntDesign, Entypo, MaterialIcons } from "@expo/vector-icons";
+import Footer from "../components/Footer";
 const list = [
   {
     imageUri:
@@ -40,6 +42,7 @@ export default function Home() {
     <VStack alignItems="center">
       <MainPageBanner />
       <ZomatoCategories />
+      <Footer />
     </VStack>
   );
 }
@@ -149,8 +152,15 @@ function MainPageBanner(props: any) {
   );
 }
 function ZomatoCategories(props: any) {
+  const router = useRouter();
   return (
-    <Pressable onPress={() => console.log("hello")}>
+    <Pressable
+      //@ts-ignore
+      onPress={() => {
+        console.log("hello");
+        router.push("/goformeal");
+      }}
+    >
       <HStack space={4} mt={8}>
         {list.map((item, index) => {
           return <Card item={item} key={index} />;

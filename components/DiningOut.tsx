@@ -21,6 +21,7 @@ import {
   Octicons,
   SimpleLineIcons,
 } from "@expo/vector-icons";
+import { useRouter } from "next/router";
 
 const card_data = [
   {
@@ -68,6 +69,7 @@ const card_data = [
 ];
 
 export default function DiningOut(props: any) {
+  const router = useRouter();
   return (
     <Box
       bg="#F8F8F8"
@@ -131,6 +133,7 @@ export default function DiningOut(props: any) {
                 <Pressable
                   onPress={() => {
                     console.log("pressed");
+                    router.push("/restaurants");
                   }}
                 >
                   <Box

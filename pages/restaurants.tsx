@@ -17,8 +17,11 @@ import {
   useBreakpointValue,
   Divider,
   Input,
+  Pressable,
 } from "native-base";
 import React from "react";
+import { useRouter } from "next/router";
+import Footer from "../components/Footer";
 const list = [
   {
     id: 5,
@@ -110,7 +113,7 @@ export default function Restaurants() {
     xl: 4,
   });
   return (
-    <VStack alignItems="center" bg="coolGray.50" py={2}>
+    <VStack alignItems="center" bg="coolGray.50">
       <HStack space="3" alignItems="center" w="80%">
         <Image
           mr={6}
@@ -200,106 +203,116 @@ export default function Restaurants() {
           key={noColumn}
         />
       </VStack>
+      <Footer />
     </VStack>
   );
 }
 function RestaurantCard(props: any) {
+  const router = useRouter();
   return (
-    <VStack w={268} mx={3} my={1} space={1}>
-      <VStack w={268} h={185}>
-        <Image
-          borderRadius="lg"
-          position="absolute"
-          zIndex="-2"
-          w={268}
-          h={185}
-          source={{
-            uri: props.item.imageUri,
-          }}
-          alt="Alternate Text"
-        />
-        {props.item.featured ? (
-          <HStack pl={2} pt={2} space="1" alignItems="center">
-            <Center w={6} h={6} bg="#ef4f5f" borderRadius="full">
-              <Icon
-                color="white"
-                fontWeight="medium"
-                as={MaterialCommunityIcons}
-                size="xs"
-                name="crown-outline"
-              />
-            </Center>
-            <Text color="white" fontWeight="medium" fontSize="xs">
-              Featured
-            </Text>
-          </HStack>
-        ) : null}
-
-        <VStack flex={1} pl={2} pb={2} justifyContent="flex-end">
-          <Center
-            w={150}
-            bg="#d92662"
-            _text={{
-              color: "white",
-              fontWeight: "medium",
-              fontSize: "sm",
+    <Pressable
+      //@ts-ignore
+      onPress={() => {
+        console.log("hello");
+        router.push("/restaurantinfo");
+      }}
+    >
+      <VStack w={268} mx={3} my={1} space={1}>
+        <VStack w={268} h={185}>
+          <Image
+            borderRadius="lg"
+            position="absolute"
+            zIndex="-2"
+            w={268}
+            h={185}
+            source={{
+              uri: props.item.imageUri,
             }}
-          >
-            Pro - Get 20% off
-          </Center>
+            alt="Alternate Text"
+          />
+          {props.item.featured ? (
+            <HStack pl={2} pt={2} space="1" alignItems="center">
+              <Center w={6} h={6} bg="#ef4f5f" borderRadius="full">
+                <Icon
+                  color="white"
+                  fontWeight="medium"
+                  as={MaterialCommunityIcons}
+                  size="xs"
+                  name="crown-outline"
+                />
+              </Center>
+              <Text color="white" fontWeight="medium" fontSize="xs">
+                Featured
+              </Text>
+            </HStack>
+          ) : null}
+
+          <VStack flex={1} pl={2} pb={2} justifyContent="flex-end">
+            <Center
+              w={150}
+              bg="#d92662"
+              _text={{
+                color: "white",
+                fontWeight: "medium",
+                fontSize: "sm",
+              }}
+            >
+              Pro - Get 20% off
+            </Center>
+          </VStack>
         </VStack>
+        <Text color="coolGray.800" fontWeight="medium" fontSize="md">
+          {props.item.name}
+        </Text>
+        <HStack space={3} alignItems="center">
+          <HStack
+            space={1}
+            px={1}
+            alignItems="center"
+            borderRadius="lg"
+            bg="#24963f"
+          >
+            <Text color="white" fontWeight="medium" fontSize="sm">
+              {props.item.dininingReviw}
+            </Text>
+            <Icon
+              color="white"
+              fontWeight="medium"
+              as={Entypo}
+              size="xxs"
+              name="star"
+            />
+          </HStack>
+          <Text color="coolGray.700" fontWeight="normal" fontSize="xs">
+            DINING |
+          </Text>
+          <HStack
+            space={1}
+            px={1}
+            alignItems="center"
+            borderRadius="lg"
+            bg="#24963f"
+          >
+            <Text color="white" fontWeight="medium" fontSize="sm">
+              {props.item.deliverhyReview}
+            </Text>
+            <Icon
+              color="white"
+              fontWeight="medium"
+              as={Entypo}
+              size="xxs"
+              name="star"
+            />
+          </HStack>
+          <Text color="coolGray.800" fontWeight="normal" fontSize="xs">
+            DELIVERY
+          </Text>
+        </HStack>
+        <Text color="coolGray.800" fontWeight="normal" fontSize="md">
+          {props.item.address}
+        </Text>
       </VStack>
-      <Text color="coolGray.800" fontWeight="medium" fontSize="md">
-        {props.item.name}
-      </Text>
-      <HStack space={3} alignItems="center">
-        <HStack
-          space={1}
-          px={1}
-          alignItems="center"
-          borderRadius="lg"
-          bg="#24963f"
-        >
-          <Text color="white" fontWeight="medium" fontSize="sm">
-            {props.item.dininingReviw}
-          </Text>
-          <Icon
-            color="white"
-            fontWeight="medium"
-            as={Entypo}
-            size="xxs"
-            name="star"
-          />
-        </HStack>
-        <Text color="coolGray.700" fontWeight="normal" fontSize="xs">
-          DINING |
-        </Text>
-        <HStack
-          space={1}
-          px={1}
-          alignItems="center"
-          borderRadius="lg"
-          bg="#24963f"
-        >
-          <Text color="white" fontWeight="medium" fontSize="sm">
-            {props.item.deliverhyReview}
-          </Text>
-          <Icon
-            color="white"
-            fontWeight="medium"
-            as={Entypo}
-            size="xxs"
-            name="star"
-          />
-        </HStack>
-        <Text color="coolGray.800" fontWeight="normal" fontSize="xs">
-          DELIVERY
-        </Text>
-      </HStack>
-      <Text color="coolGray.800" fontWeight="normal" fontSize="md">
-        {props.item.address}
-      </Text>
-    </VStack>
+    </Pressable>
   );
 }
 function Banner(props: any) {

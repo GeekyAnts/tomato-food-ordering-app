@@ -29,6 +29,7 @@ import {
   Radio,
 } from "native-base";
 import React from "react";
+import Footer from "../components/Footer";
 const list = [
   {
     id: 5,
@@ -140,7 +141,7 @@ export default function RestaurantInfo() {
     xl: 4,
   });
   return (
-    <VStack alignItems="center" bg="coolGray.50" py={2}>
+    <VStack alignItems="center" bg="coolGray.50">
       <Header />
       <Divider mt={2} mb={2} />
 
@@ -150,6 +151,7 @@ export default function RestaurantInfo() {
         <Details />
         <InfoWithTabs />
       </VStack>
+      <Footer />
     </VStack>
   );
 }
