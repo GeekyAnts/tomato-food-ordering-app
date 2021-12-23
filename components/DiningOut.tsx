@@ -125,12 +125,13 @@ export default function DiningOut(props: any) {
             </Link>
           </HStack>
         </HStack>
-        {/* <ScrollView horizontal={true}> */}
+        {/* @ts-ignore */}
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {card_data.map((item: any, index: number) => {
             return (
               <HStack key={index} alignItems="center" mr="4">
                 <Pressable
+                  // @ts-ignore
                   onPress={() => {
                     console.log("pressed");
                     router.push("/restaurants");

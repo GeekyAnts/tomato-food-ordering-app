@@ -61,7 +61,7 @@ export default function Header(props: any) {
             fontSize="md"
             flex={1}
             borderWidth={0}
-            outline="none"
+            outline="undefined"
             placeholder="Search for restaurant, cuisine or a dish"
           />
         </HStack>

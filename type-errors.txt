@@ -1,0 +1,3 @@
+Type errors
+ -  Pressable -> onPress
+ -  ScrollView -> horizontal 
