@@ -73,11 +73,11 @@ export default function DiningOut(props: any) {
   return (
     <Box
       bg="#F8F8F8"
-      p="5"
+      py="5"
       borderTopWidth={"1px"}
       borderTopColor={"coolGray.200"}
     >
-      <VStack pb="6">
+      <VStack pb="6" w="80%" m="auto">
         <Text
           fontSize={"30px"}
           fontWeight={"medium"}
@@ -87,7 +87,13 @@ export default function DiningOut(props: any) {
         >
           Collections
         </Text>
-        <HStack alignItems={"center"} justifyContent={"space-between"} mb="3">
+        <HStack
+          // alignItems={"center"}
+          alignItems={{ base: "flex-start", lg: "center" }}
+          justifyContent={"space-between"}
+          mb="3"
+          flexDirection={{ base: "column", lg: "row" }}
+        >
           <Text
             fontSize={"lg"}
             fontWeight={"light"}
@@ -97,7 +103,7 @@ export default function DiningOut(props: any) {
             Explore curated lists of top restaurants, cafes, pubs, and bars in
             Bengaluru, based on trends
           </Text>
-          <HStack alignItems={"center"} space="2">
+          <HStack alignItems="center" mt={{ base: 2, lg: 0 }} space="2">
             <Link
               href="#"
               isUnderlined={false}
@@ -133,7 +139,7 @@ export default function DiningOut(props: any) {
                 <Pressable
                   // @ts-ignore
                   onPress={() => {
-                    console.log("pressed");
+                    // console.log("pressed");
                     router.push("/restaurants");
                   }}
                 >
@@ -145,13 +151,9 @@ export default function DiningOut(props: any) {
                     <Image
                       height="320px"
                       width="260px"
-                      //   height={{ base: 20, md: "320px" }}
-                      //   width={{ base: 20, md: "260px" }}
                       borderRadius={{ base: 4, md: 8 }}
                       source={item.imageUri}
                       alt="Image"
-                      //   background="-webkit-linear-gradient(top, rgba(50, 50, 50, 0.5) 0%, rgba(80, 80, 80, 0.5) 59%, rgba(100, 100, 100, 0.65) 100%), url(item.imageUri) no-repeat"
-                      //   resizeMode="contain"
                     />
 
                     <VStack

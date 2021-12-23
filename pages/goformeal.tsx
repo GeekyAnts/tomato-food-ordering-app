@@ -30,10 +30,11 @@ export default function GoForMeal(props: any) {
         borderColor: "coolGray.800",
       }}
       w="100%"
+      h="100%"
     >
       <Header />
-      <VStack w="80%">
-        <HStack bg="coolGray.50" pl="5" pt="2">
+      <VStack w="100%" mt="6">
+        <HStack bg="coolGray.50" pt="2" w="80%" mx="auto">
           <Link
             href="#"
             isUnderlined={false}
@@ -77,22 +78,18 @@ export default function GoForMeal(props: any) {
           </Text>
         </HStack>
         <HStack
-          pl={{ base: 4, md: 10, lg: 10 }}
-          pt={{ base: 4 }}
-          space={{ base: 40, md: 40, lg: 40 }}
+          w="80%"
+          mx="auto"
+          pl={{ base: 0, md: 0, lg: 0 }}
           alignItems={{ lg: "center" }}
           _light={{
             bg: "coolGray.50",
             borderColor: "coolGray.200",
           }}
           flexWrap="wrap"
-          width="100%"
         >
           <HStack
             justifyContent="flex-start"
-            space="16"
-            pt={2}
-            px={{ base: 4, md: 4, lg: 0 }}
             flexWrap="wrap"
             w={{ base: "60%", md: "60%", lg: "100%" }}
           >
@@ -100,7 +97,7 @@ export default function GoForMeal(props: any) {
               p="2"
               px="4"
               pb="4"
-              // pr="0"
+              mr={{ md: "16" }}
               // @ts-ignore
               onPress={() => {
                 setTabName("Delivery");
@@ -153,6 +150,7 @@ export default function GoForMeal(props: any) {
               p="2"
               px="4"
               pb="4"
+              mr={{ md: "16" }}
               // @ts-ignore
               onPress={() => {
                 setTabName("Dining Out");
@@ -258,274 +256,285 @@ export default function GoForMeal(props: any) {
         {tabName == "Delivery" ? <DiningOut /> : null}
         {tabName == "Dining Out" ? <DiningOut /> : null}
         {tabName == "Nightlife" ? <DiningOut /> : null}
-        <HStack px="5" pt="8" space="4" flexWrap={"wrap"}>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Icon
-              as={<Ionicons name="ios-git-compare-outline" />}
-              size="4"
-              _light={{ color: "#9C9C9C" }}
-              _dark={{ color: "coolGray.500" }}
-            />
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-              ml="2"
-            >
-              Filters
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Icon
-              as={<Ionicons name="swap-vertical-outline" />}
-              size="5"
-              _light={{ color: "#9C9C9C" }}
-              _dark={{ color: "coolGray.500" }}
-            />
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-              ml="2"
-            >
-              Distance
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Rating: 4.0+
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Online bookings
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"2"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-              mr="2"
-            >
-              Cuisines
-            </Text>
-            <Icon
-              as={<MaterialIcons name="keyboard-arrow-down" />}
-              size="5"
-              _light={{ color: "#9C9C9C" }}
-              _dark={{ color: "coolGray.500" }}
-            />
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"2"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-              mr="2"
-            >
-              Pro Offers
-            </Text>
-            <Icon
-              as={<MaterialIcons name="keyboard-arrow-down" />}
-              size="5"
-              _light={{ color: "#9C9C9C" }}
-              _dark={{ color: "coolGray.500" }}
-            />
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Outdoor Seating
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Serves Alcohol
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Pure Veg
-            </Text>
-          </Link>
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Open Now
-            </Text>
-          </Link>
-
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"2"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-              mr="2"
-            >
-              More filters
-            </Text>
-            <Icon
-              as={<MaterialIcons name="keyboard-arrow-down" />}
-              size="5"
-              _light={{ color: "#9C9C9C" }}
-              _dark={{ color: "coolGray.500" }}
-            />
-          </Link>
-
-          <Link
-            _hover={{ bg: "#F8F8F8" }}
-            alignItems={"center"}
-            borderWidth={"1"}
-            borderRadius={"md"}
-            borderColor={"#9C9C9C"}
-            py={"2"}
-            px={"3"}
-            my="2"
-          >
-            <Text
-              color="#9C9C9C"
-              fontSize="sm"
-              fontWeight={"light"}
-              fontFamily={"Okra,Helvetica,sans-serif"}
-            >
-              Cafés
-            </Text>
-          </Link>
-        </HStack>
       </VStack>
+      <HStack w="80%" mx="auto" pt="8" pb="4" flexWrap={"wrap"}>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Icon
+            as={<Ionicons name="ios-git-compare-outline" />}
+            size="4"
+            _light={{ color: "#9C9C9C" }}
+            _dark={{ color: "coolGray.500" }}
+          />
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+            ml="2"
+          >
+            Filters
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Icon
+            as={<Ionicons name="swap-vertical-outline" />}
+            size="5"
+            _light={{ color: "#9C9C9C" }}
+            _dark={{ color: "coolGray.500" }}
+          />
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+            ml="2"
+          >
+            Distance
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Rating: 4.0+
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Online bookings
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"2"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+            mr="2"
+          >
+            Cuisines
+          </Text>
+          <Icon
+            as={<MaterialIcons name="keyboard-arrow-down" />}
+            size="5"
+            _light={{ color: "#9C9C9C" }}
+            _dark={{ color: "coolGray.500" }}
+          />
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"2"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+            mr="2"
+          >
+            Pro Offers
+          </Text>
+          <Icon
+            as={<MaterialIcons name="keyboard-arrow-down" />}
+            size="5"
+            _light={{ color: "#9C9C9C" }}
+            _dark={{ color: "coolGray.500" }}
+          />
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Outdoor Seating
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Serves Alcohol
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Pure Veg
+          </Text>
+        </Link>
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Open Now
+          </Text>
+        </Link>
+
+        <Link
+          mr="4"
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"2"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+            mr="2"
+          >
+            More filters
+          </Text>
+          <Icon
+            as={<MaterialIcons name="keyboard-arrow-down" />}
+            size="5"
+            _light={{ color: "#9C9C9C" }}
+            _dark={{ color: "coolGray.500" }}
+          />
+        </Link>
+
+        <Link
+          _hover={{ bg: "#F8F8F8" }}
+          alignItems={"center"}
+          borderWidth={"1"}
+          borderRadius={"md"}
+          borderColor={"#9C9C9C"}
+          py={"2"}
+          px={"3"}
+          my="2"
+        >
+          <Text
+            color="#9C9C9C"
+            fontSize="sm"
+            fontWeight={"light"}
+            fontFamily={"Okra,Helvetica,sans-serif"}
+          >
+            Cafés
+          </Text>
+        </Link>
+      </HStack>
       <Footer />
     </Box>
   );
