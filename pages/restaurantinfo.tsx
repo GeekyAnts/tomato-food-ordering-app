@@ -139,7 +139,6 @@ export default function RestaurantInfo() {
   return (
     <VStack alignItems="center" bg="coolGray.50">
       <Header />
-      <Divider mt={2} mb={2} />
 
       <VStack alignItems="center" w="80%">
         <Navigator />

@@ -39,7 +39,7 @@ const list = [
 
 export default function Home() {
   return (
-    <VStack alignItems="center">
+    <VStack alignItems="center" w="100%">
       <MainPageBanner />
       <ZomatoCategories />
       <Footer />
@@ -56,7 +56,6 @@ function MainPageBanner(props: any) {
           uri: "https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png",
         }}
         alt="Alternate Text"
-        size="xl"
         w="100%"
         h={500}
       />
@@ -76,7 +75,7 @@ function MainPageBanner(props: any) {
           </Text>
         </HStack>
       </HStack>
-      <Center mt={20}>
+      <Center mt={20} w="100%">
         <Image
           source={{
             uri: "https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png",
@@ -87,11 +86,14 @@ function MainPageBanner(props: any) {
         />
 
         <Heading
+          textAlign="center"
+          w={{ base: "80%", md: "60%", lg: "48%" }}
           color="white"
           fontSize="4xl"
           fontWeight="normal"
           lineHeight="xs"
           mt={10}
+          mx={{ base: 10 }}
         >
           Discover the best food &amp; drinks in Delhi NCR
         </Heading>
@@ -100,10 +102,10 @@ function MainPageBanner(props: any) {
           bg="white"
           space="3"
           alignItems="center"
-          borderRadius="lg"
-          w="48%"
+          w={{ base: "80%", md: "60%", lg: "48%" }}
           py={2}
           mt={12}
+          borderRadius="lg"
         >
           <HStack space="1" alignItems="center">
             <Icon
@@ -154,25 +156,29 @@ function MainPageBanner(props: any) {
 function ZomatoCategories(props: any) {
   const router = useRouter();
   return (
-    <Pressable
-      //@ts-ignore
-      onPress={() => {
-        console.log("hello");
-        router.push("/goformeal");
-      }}
-    >
-      <HStack space={4} mt={8}>
-        {list.map((item, index) => {
-          return <Card item={item} key={index} />;
-        })}
-      </HStack>
-    </Pressable>
+    <HStack justifyContent="space-around" mt={8} w="80%">
+      {list.map((item, index) => {
+        return (
+          <Pressable
+            w="24%"
+            key={index}
+            //@ts-ignore
+            onPress={() => {
+              console.log("hello");
+              router.push("/goformeal");
+            }}
+          >
+            <Card item={item} />
+          </Pressable>
+        );
+      })}
+    </HStack>
   );
 }
 function Card(props: any) {
   return (
     <VStack
-      w={260}
+      w="100%"
       alignItems="center"
       borderWidth={1}
       borderColor="coolGray.200"
@@ -181,7 +187,7 @@ function Card(props: any) {
       <Image
         borderTopLeftRadius="lg"
         borderTopRightRadius="lg"
-        w={260}
+        w="100%"
         h={220}
         source={{
           uri: props.item.imageUri,

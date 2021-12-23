@@ -1,4 +1,4 @@
-import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo, Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   Center,
   VStack,
@@ -11,6 +11,7 @@ import {
   useBreakpointValue,
   Divider,
   Pressable,
+  Hidden,
 } from "native-base";
 import React from "react";
 import { useRouter } from "next/router";
@@ -101,17 +102,16 @@ const list = [
 
 export default function Restaurants() {
   const noColumn = useBreakpointValue({
-    base: 4,
+    base: 2,
     lg: 4,
-    md: 4,
+    md: 2,
     xl: 4,
   });
   return (
     <VStack alignItems="center" bg="coolGray.50">
       <Header />
-      <Divider mt={2} mb={2} />
 
-      <VStack alignItems="center" w="80%">
+      <VStack alignItems="center" w={{ base: "90%", md: "90%", lg: "80%" }}>
         <Banner />
         <FlatList
           mt={8}
