@@ -39,12 +39,16 @@ export default function Footer(props: any) {
     <Box bg="#F8F8F8" p="5" w="100%" mt={4}>
       <VStack px="9%">
         <HStack
-          mb="8"
-          alignItems={"center"}
+          mb={{ base: 5, md: 8 }}
+          alignItems={{ base: "flex-start", md: "center" }}
           justifyContent={"space-between"}
-          //   flexDirection={{ base: "column", sm: "row" }}
+          flexDirection={{ base: "column", md: "row" }}
         >
-          <Text fontSize={"36px"} fontWeight={"extrabold"}>
+          <Text
+            fontSize={"36px"}
+            fontWeight={"extrabold"}
+            mb={{ base: 2, md: 0 }}
+          >
             zomato
           </Text>
           <HStack alignItems={"center"} space="4">
@@ -71,8 +75,7 @@ export default function Footer(props: any) {
                 India
               </Text>
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
@@ -103,7 +106,7 @@ export default function Footer(props: any) {
                 English
               </Text>
 
-              <Pressable onPress={() => console.log("hello")}>
+              <Pressable>
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
                   size="5"
@@ -117,7 +120,7 @@ export default function Footer(props: any) {
         <HStack
           justifyContent="space-between"
           mr="16"
-          //   flexDirection={{ base: "column", md: "row" }}
+          flexDirection={{ base: "column", lg: "row" }}
         >
           <VStack mb="4" space="6px">
             <Text
@@ -287,8 +290,7 @@ export default function Footer(props: any) {
             </Text>
             <HStack space="2">
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Icon
                   size="6"
@@ -299,8 +301,7 @@ export default function Footer(props: any) {
                 />
               </Pressable>
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Icon
                   size="6"
@@ -311,8 +312,7 @@ export default function Footer(props: any) {
                 />
               </Pressable>
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Icon
                   size="6"
@@ -323,10 +323,9 @@ export default function Footer(props: any) {
                 />
               </Pressable>
             </HStack>
-            <VStack flex="1" w="100%" mt="2" space={{ base: "2", md: 0 }}>
+            <VStack mt="2" space={{ base: "1", lg: 0 }}>
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Image
                   source={{
@@ -334,13 +333,12 @@ export default function Footer(props: any) {
                   }}
                   alt="Alternate Text"
                   resizeMode="contain"
-                  w="100%"
+                  w={{ base: "150px", lg: "100%" }}
                   h="50px"
                 />
               </Pressable>
               <Pressable
-                //@ts-ignore
-                onPress={() => console.log("hello")}
+              //@ts-ignore
               >
                 <Image
                   source={{
@@ -348,7 +346,7 @@ export default function Footer(props: any) {
                   }}
                   alt="Alternate Text"
                   resizeMode="contain"
-                  w="100%"
+                  w={{ base: "150px", lg: "100%" }}
                   h="50px"
                 />
               </Pressable>
