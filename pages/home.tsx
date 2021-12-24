@@ -39,7 +39,7 @@ const list = [
 
 export default function Home() {
   return (
-    <VStack alignItems="center" w="100%">
+    <VStack alignItems="center" w="100%" bg="coolGray.50">
       <MainPageBanner />
       <ZomatoCategories />
       <Footer />
