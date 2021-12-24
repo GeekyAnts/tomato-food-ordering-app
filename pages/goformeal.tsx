@@ -257,7 +257,7 @@ export default function GoForMeal(props: any) {
       </VStack>
       <HStack
         w={{ base: "95%", md: "90%", lg: "80%" }}
-        mx="4"
+        mx="6"
         pt="8"
         pb="4"
         flexWrap={"wrap"}
