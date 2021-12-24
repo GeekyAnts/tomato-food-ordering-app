@@ -77,7 +77,6 @@ export default function DiningOut(props: any) {
       borderTopWidth={"1px"}
       borderTopColor={"coolGray.200"}
       w="95%"
-      mx="4"
     >
       <VStack pb="6">
         <Text

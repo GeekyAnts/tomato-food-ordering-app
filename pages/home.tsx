@@ -166,6 +166,7 @@ function ZomatoCategories(props: any) {
       mt={8}
       w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
       mx={{ base: 4 }}
+      my={200}
     >
       {list.map((item, index) => {
         return (

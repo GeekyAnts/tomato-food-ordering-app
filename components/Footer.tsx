@@ -38,12 +38,13 @@ export default function Footer(props: any) {
   return (
     <Box
       bg="#F8F8F8"
-      p="5"
-      w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
-      mx={{ base: 4 }}
+      py="5"
+      w="100%"
+      px={{ base: 2 }}
       mt={4}
+      alignItems={"center"}
     >
-      <VStack>
+      <VStack w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}>
         <HStack
           mb={{ base: 5, md: 8 }}
           alignItems={{ base: "flex-start", md: "center" }}
