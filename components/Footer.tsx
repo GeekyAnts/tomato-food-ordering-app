@@ -36,8 +36,14 @@ const Links_ForYou = ["Privacy", "Terms", "Security", "Sitemap"];
 
 export default function Footer(props: any) {
   return (
-    <Box bg="#F8F8F8" p="5" w="100%" mt={4}>
-      <VStack px="9%">
+    <Box
+      bg="#F8F8F8"
+      p="5"
+      w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
+      mx={{ base: 4 }}
+      mt={4}
+    >
+      <VStack>
         <HStack
           mb={{ base: 5, md: 8 }}
           alignItems={{ base: "flex-start", md: "center" }}
@@ -49,7 +55,7 @@ export default function Footer(props: any) {
             fontWeight={"extrabold"}
             mb={{ base: 2, md: 0 }}
           >
-            zomato
+            Tomato
           </Text>
           <HStack alignItems={"center"} space="4">
             <HStack
