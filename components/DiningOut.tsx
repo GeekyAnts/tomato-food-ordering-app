@@ -76,8 +76,10 @@ export default function DiningOut(props: any) {
       py="5"
       borderTopWidth={"1px"}
       borderTopColor={"coolGray.200"}
+      w="95%"
+      mx="4"
     >
-      <VStack pb="6" w="80%" m="auto">
+      <VStack pb="6">
         <Text
           fontSize={"30px"}
           fontWeight={"medium"}
@@ -139,7 +141,6 @@ export default function DiningOut(props: any) {
                 <Pressable
                   // @ts-ignore
                   onPress={() => {
-                    // console.log("pressed");
                     router.push("/restaurants");
                   }}
                 >

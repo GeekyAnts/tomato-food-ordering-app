@@ -29,12 +29,11 @@ export default function GoForMeal(props: any) {
         bg: "coolGray.900",
         borderColor: "coolGray.800",
       }}
-      w="100%"
       h="100%"
     >
       <Header />
-      <VStack w="100%" mt="6">
-        <HStack bg="coolGray.50" pt="2" w="80%" mx="auto">
+      <VStack w={{ base: "95%", md: "90%", lg: "80%" }} mt="2">
+        <HStack bg="coolGray.50" pt="2" w="100%" px="4">
           <Link
             href="#"
             isUnderlined={false}
@@ -78,8 +77,7 @@ export default function GoForMeal(props: any) {
           </Text>
         </HStack>
         <HStack
-          w="80%"
-          mx="auto"
+          w={{ base: "100%", md: "100%", lg: "100%" }}
           pl={{ base: 0, md: 0, lg: 0 }}
           alignItems={{ lg: "center" }}
           _light={{
@@ -91,11 +89,11 @@ export default function GoForMeal(props: any) {
           <HStack
             justifyContent="flex-start"
             flexWrap="wrap"
-            w={{ base: "60%", md: "60%", lg: "100%" }}
+            w={{ base: "95%", md: "95%", lg: "100%" }}
           >
             <Pressable
               p="2"
-              px="4"
+              px="2"
               pb="4"
               mr={{ md: "16" }}
               // @ts-ignore
@@ -257,7 +255,13 @@ export default function GoForMeal(props: any) {
         {tabName == "Dining Out" ? <DiningOut /> : null}
         {tabName == "Nightlife" ? <DiningOut /> : null}
       </VStack>
-      <HStack w="80%" mx="auto" pt="8" pb="4" flexWrap={"wrap"}>
+      <HStack
+        w={{ base: "95%", md: "90%", lg: "80%" }}
+        mx="4"
+        pt="8"
+        pb="4"
+        flexWrap={"wrap"}
+      >
         <Link
           mr="4"
           _hover={{ bg: "#F8F8F8" }}

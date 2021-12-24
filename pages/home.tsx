@@ -59,7 +59,12 @@ function MainPageBanner(props: any) {
         w="100%"
         h={500}
       />
-      <HStack alignItems="center" justifyContent="space-between" mx={40} py={4}>
+      <HStack
+        alignItems="center"
+        justifyContent="space-between"
+        mx={{ base: 10, md: 20, lg: 40 }}
+        py={4}
+      >
         <Text color="white" fontWeight="medium" fontSize="md">
           Get the App
         </Text>
@@ -87,9 +92,9 @@ function MainPageBanner(props: any) {
 
         <Heading
           textAlign="center"
-          w={{ base: "80%", md: "60%", lg: "48%" }}
+          w={{ base: "90%", md: "60%", lg: "48%" }}
           color="white"
-          fontSize="4xl"
+          fontSize={{ base: "3xl", md: "3xl", lg: "3xl", xl: "4xl" }}
           fontWeight="normal"
           lineHeight="xs"
           mt={10}
@@ -102,7 +107,7 @@ function MainPageBanner(props: any) {
           bg="white"
           space="3"
           alignItems="center"
-          w={{ base: "80%", md: "60%", lg: "48%" }}
+          w={{ base: "90%", md: "60%", lg: "48%" }}
           py={2}
           mt={12}
           borderRadius="lg"
@@ -156,7 +161,12 @@ function MainPageBanner(props: any) {
 function ZomatoCategories(props: any) {
   const router = useRouter();
   return (
-    <HStack justifyContent="space-around" mt={8} w="80%">
+    <HStack
+      justifyContent="space-around"
+      mt={8}
+      w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
+      mx={{ base: 4 }}
+    >
       {list.map((item, index) => {
         return (
           <Pressable
@@ -164,7 +174,6 @@ function ZomatoCategories(props: any) {
             key={index}
             //@ts-ignore
             onPress={() => {
-              console.log("hello");
               router.push("/goformeal");
             }}
           >
@@ -195,7 +204,9 @@ function Card(props: any) {
         alt="Alternate Text"
       />
       <Center
-        _text={{ lineHeight: "4xl", fontSize: "lg" }}
+        h={20}
+        py={2}
+        _text={{ fontSize: "lg", textAlign: "center" }}
         color="#363636"
         fontWeight="extrabold"
       >

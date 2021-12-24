@@ -22,6 +22,7 @@ import {
   Pressable,
   ScrollView,
   Radio,
+  Hidden,
 } from "native-base";
 import React from "react";
 import Footer from "../components/Footer";
@@ -140,7 +141,11 @@ export default function RestaurantInfo() {
     <VStack alignItems="center" bg="coolGray.50">
       <Header />
 
-      <VStack alignItems="center" w="80%">
+      <VStack
+        alignItems="center"
+        px={{ base: 4 }}
+        w={{ base: "95%", md: "90%", lg: "80%" }}
+      >
         <Navigator />
         <InfoBanner />
         <Details />
@@ -160,7 +165,7 @@ function InfoWithTabs(props: any) {
             <Pressable
               key={index}
               p="2"
-              px="4"
+              px={{ base: 2, md: 2, lg: 4 }}
               pb="4"
               // @ts-ignore
               onPress={() => {
@@ -314,8 +319,17 @@ function OverviewTab(props: any) {
     "Happy Hours",
   ];
   return (
-    <HStack w="100%">
-      <VStack w="70%">
+    <HStack
+      w="100%"
+      space={4}
+      flexDirection={{
+        base: "column-reverse",
+        md: "column-reverse",
+        lg: "column-reverse",
+        xl: "row",
+      }}
+    >
+      <VStack w={{ base: "100%", md: "100%", lg: "70%" }}>
         <ScrollView>
           <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
             About this place
@@ -437,7 +451,13 @@ function OverviewTab(props: any) {
           </VStack>
         </ScrollView>
       </VStack>
-      <VStack w="30%">
+      <VStack w={{ base: "100%", md: "100%", lg: "30%" }}>
+        <Hidden from="xl">
+          <Text mt={2} color="coolGray.800" fontWeight="medium" fontSize="xl">
+            Address
+          </Text>
+        </Hidden>
+
         <LocaitonCard />
       </VStack>
     </HStack>
@@ -665,6 +685,7 @@ function CuisineItem(props: any) {
 function LocaitonCard(prps: any) {
   return (
     <VStack
+      my={{ base: 4, md: 4 }}
       w="340px"
       shadow={4}
       mx="4"
@@ -711,17 +732,18 @@ function LocaitonCard(prps: any) {
         Direction
       </Text>
 
-      <HStack alignItems="center" mr="4">
+      <HStack
+        alignItems="center"
+        //mr="4"
+      >
         <Pressable
           //@ts-ignore
-          onPress={() => {
-            console.log("pressed");
-          }}
+          onPress={() => {}}
         >
           <Box _light={{ bg: "primary.50" }} _dark={{ bg: "customGray" }}>
             <Image
               height="150px"
-              width="308px"
+              w="310px"
               source="https://maps.zomato.com/php/staticmap?center=28.4694101506,77.0631429926&maptype=zomato&markers=28.4694101506,77.0631429926,pin_res32&sensor=false&scale=2&zoom=16&language=en&size=240x150&size=400x240&size=650x250"
               alt="Image"
             />
