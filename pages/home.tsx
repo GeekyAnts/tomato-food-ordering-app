@@ -82,12 +82,10 @@ function MainPageBanner(props: any) {
       </HStack>
       <Center mt={20} w="100%">
         <Image
-          source={{
-            uri: "https://b.zmtcdn.com/web_assets/8313a97515fcb0447d2d77c276532a511583262271.png",
-          }}
+          width="300px"
+          height="60px"
+          src={"/images/tomatoWhite.png"}
           alt="Alternate Text"
-          w={300}
-          h={60}
         />
 
         <Heading
