@@ -738,9 +738,7 @@ function LocaitonCard(prps: any) {
       >
         <Pressable
           //@ts-ignore
-          onPress={() => {
-            console.log("pressed");
-          }}
+          onPress={() => {}}
         >
           <Box _light={{ bg: "primary.50" }} _dark={{ bg: "customGray" }}>
             <Image

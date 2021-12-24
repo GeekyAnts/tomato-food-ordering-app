@@ -139,7 +139,6 @@ function RestaurantCard(props: any) {
     <Pressable
       //@ts-ignore
       onPress={() => {
-        console.log("hello");
         router.push("/restaurantinfo");
       }}
     >

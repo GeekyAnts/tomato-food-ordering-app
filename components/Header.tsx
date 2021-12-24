@@ -9,23 +9,33 @@ import {
   Hidden,
   Center,
   Box,
+  Pressable,
 } from "native-base";
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
+import { useRouter } from "next/router";
 
 export default function Header(props: any) {
+  const router = useRouter();
   return (
     <Box w="100%" alignItems="center">
       <Hidden from="base" till="xl">
         <HStack mt={2} space="3" alignItems="center" w="80%">
-          <Image
-            mr={6}
-            w={184}
-            h={36}
-            source={{
-              uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
+          <Pressable
+            //@ts-ignore
+            onPress={() => {
+              router.push("/");
             }}
-            alt="Alternate Text"
-          />
+          >
+            <Image
+              mr={6}
+              w={184}
+              h={36}
+              source={{
+                uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
+              }}
+              alt="Alternate Text"
+            />
+          </Pressable>
 
           <HStack
             mr={4}
@@ -88,6 +98,7 @@ export default function Header(props: any) {
       </Hidden>
       <Hidden from="xl">
         <HStack
+          py={2}
           mt={2}
           space="3"
           justifyContent="space-between"
@@ -95,14 +106,21 @@ export default function Header(props: any) {
           w="100%"
         >
           <Center flex={1} ml={8}>
-            <Image
-              w={184}
-              h={36}
-              source={{
-                uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
+            <Pressable
+              //@ts-ignore
+              onPress={() => {
+                router.push("/");
               }}
-              alt="Alternate Text"
-            />
+            >
+              <Image
+                w={184}
+                h={36}
+                source={{
+                  uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
+                }}
+                alt="Alternate Text"
+              />
+            </Pressable>
           </Center>
           <Center
             w={9}

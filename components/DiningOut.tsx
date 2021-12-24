@@ -141,7 +141,6 @@ export default function DiningOut(props: any) {
                 <Pressable
                   // @ts-ignore
                   onPress={() => {
-                    // console.log("pressed");
                     router.push("/restaurants");
                   }}
                 >
