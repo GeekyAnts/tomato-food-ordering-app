@@ -59,7 +59,12 @@ function MainPageBanner(props: any) {
         w="100%"
         h={500}
       />
-      <HStack alignItems="center" justifyContent="space-between" mx={40} py={4}>
+      <HStack
+        alignItems="center"
+        justifyContent="space-between"
+        mx={{ base: 10, md: 20, lg: 40 }}
+        py={4}
+      >
         <Text color="white" fontWeight="medium" fontSize="md">
           Get the App
         </Text>
@@ -195,7 +200,8 @@ function Card(props: any) {
         alt="Alternate Text"
       />
       <Center
-        _text={{ lineHeight: "4xl", fontSize: "lg" }}
+        py={2}
+        _text={{ fontSize: "lg" }}
         color="#363636"
         fontWeight="extrabold"
       >

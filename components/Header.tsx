@@ -15,7 +15,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 export default function Header(props: any) {
   return (
     <Box w="100%" alignItems="center">
-      <Hidden from="base" till="lg">
+      <Hidden from="base" till="xl">
         <HStack mt={2} space="3" alignItems="center" w="80%">
           <Image
             mr={6}
@@ -86,7 +86,7 @@ export default function Header(props: any) {
           </Text>
         </HStack>
       </Hidden>
-      <Hidden from="lg">
+      <Hidden from="xl">
         <HStack
           mt={2}
           space="3"
