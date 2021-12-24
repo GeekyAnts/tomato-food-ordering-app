@@ -5,7 +5,6 @@ import {
   Icon,
   Input,
   Text,
-  Image,
   Hidden,
   Center,
   Box,
@@ -13,6 +12,7 @@ import {
 } from "native-base";
 import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 export default function Header(props: any) {
   const router = useRouter();
@@ -25,14 +25,14 @@ export default function Header(props: any) {
             onPress={() => {
               router.push("/");
             }}
+            mr={6}
+            w={184}
+            h={36}
           >
             <Image
-              mr={6}
-              w={184}
-              h={36}
-              source={{
-                uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
-              }}
+              width="184px"
+              height="36px"
+              src={"/images/tomato.png"}
               alt="Alternate Text"
             />
           </Pressable>
@@ -113,11 +113,9 @@ export default function Header(props: any) {
               }}
             >
               <Image
-                w={184}
-                h={36}
-                source={{
-                  uri: "https://b.zmtcdn.com/web_assets/b40b97e677bc7b2ca77c58c61db266fe1603954218.png",
-                }}
+                width="184px"
+                height="36px"
+                src={"/images/tomato.png"}
                 alt="Alternate Text"
               />
             </Pressable>
