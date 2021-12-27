@@ -742,10 +742,12 @@ function LocaitonCard(prps: any) {
         >
           <Box _light={{ bg: "primary.50" }} _dark={{ bg: "customGray" }}>
             <Image
-              height="150px"
               w="310px"
-              source="https://maps.zomato.com/php/staticmap?center=28.4694101506,77.0631429926&maptype=zomato&markers=28.4694101506,77.0631429926,pin_res32&sensor=false&scale=2&zoom=16&language=en&size=240x150&size=400x240&size=650x250"
+              h="150px"
               alt="Image"
+              source={{
+                uri: "https://maps.zomato.com/php/staticmap?center=28.4694101506,77.0631429926&maptype=zomato&markers=28.4694101506,77.0631429926,pin_res32&sensor=false&scale=2&zoom=16&language=en&size=240x150&size=400x240&size=650x250",
+              }}
             />
 
             <HStack
@@ -1225,12 +1227,14 @@ function ReviewCard(props: any) {
       <HStack justifyContent={"space-between"} w="100%">
         <HStack my="2">
           <Image
-            height="44px"
-            width="44px"
-            borderRadius={"full"}
-            source="https://b.zmtcdn.com/data/user_profile_pictures/70f/fa9eca8e5c5aba0e9648be31e4f5770f.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A"
-            alt="Image"
             mr="3"
+            alt="Image"
+            width="44px"
+            height="44px"
+            borderRadius="full"
+            source={{
+              uri: "https://b.zmtcdn.com/data/user_profile_pictures/70f/fa9eca8e5c5aba0e9648be31e4f5770f.jpg?fit=around%7C400%3A400&crop=400%3A400%3B%2A%2C%2A",
+            }}
           />
           <VStack>
             <Text
@@ -1417,7 +1421,9 @@ function ReviewCard(props: any) {
         <Image
           height="150px"
           width="240px"
-          source="https://b.zmtcdn.com/data/reviews_photos/fc3/34c6f4408ce45fba3150dcd1bdd3cfc3_1634536759.jpg?output-format=webp"
+          source={{
+            uri: "https://b.zmtcdn.com/data/reviews_photos/fc3/34c6f4408ce45fba3150dcd1bdd3cfc3_1634536759.jpg?output-format=webp",
+          }}
           alt="Image"
           mr="2"
           borderRadius={"md"}
@@ -1425,7 +1431,9 @@ function ReviewCard(props: any) {
         <Image
           height="150px"
           width="240px"
-          source="https://b.zmtcdn.com/data/reviews_photos/45d/b3591d3baa2d5e223a4fe142d522a45d_1634536758.jpg?output-format=webp"
+          source={{
+            uri: "https://b.zmtcdn.com/data/reviews_photos/45d/b3591d3baa2d5e223a4fe142d522a45d_1634536758.jpg?output-format=webp",
+          }}
           alt="Image"
           mr="2"
           borderRadius={"md"}
@@ -1433,7 +1441,9 @@ function ReviewCard(props: any) {
         <Image
           height="150px"
           width="240px"
-          source="https://b.zmtcdn.com/data/reviews_photos/079/f65fbb66745f40c6a2d2a671c59ea079_1634536751.jpg?output-format=webp"
+          source={{
+            uri: "https://b.zmtcdn.com/data/reviews_photos/079/f65fbb66745f40c6a2d2a671c59ea079_1634536751.jpg?output-format=webp",
+          }}
           alt="Image"
           borderRadius={"md"}
         />
