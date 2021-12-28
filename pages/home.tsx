@@ -126,7 +126,7 @@ function MainPageBanner(props: any) {
           mt={12}
           borderRadius="lg"
         >
-          <HStack space="1" alignItems="center">
+          <Pressable flexDir="row" alignItems="center">
             <Icon
               ml="2"
               as={Entypo}
@@ -135,7 +135,7 @@ function MainPageBanner(props: any) {
               _light={{ color: "rgb(255, 126, 139)" }}
               _dark={{ color: "coolGray.500" }}
             />
-            <Text color="coolGray.500" fontSize="md">
+            <Text color="coolGray.500" fontSize="md" mx="1">
               Bangla Sahib Gurdwara |
             </Text>
             <Icon
@@ -146,7 +146,7 @@ function MainPageBanner(props: any) {
               _dark={{ color: "coolGray.500" }}
             />
             <Divider h={5} w={0.5} ml={2} orientation="vertical" />
-          </HStack>
+          </Pressable>
           <HStack space="3" alignItems="center" flex={1}>
             <Icon
               ml={3}
