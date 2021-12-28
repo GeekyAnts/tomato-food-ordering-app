@@ -102,7 +102,8 @@ const list = [
 
 export default function Restaurants() {
   const noColumn = useBreakpointValue({
-    base: 2,
+    base: 1,
+    sm: 2,
     lg: 3,
     md: 2,
     xl: 4,
@@ -137,7 +138,6 @@ function RestaurantCard(props: any) {
   const router = useRouter();
   return (
     <Pressable
-      //@ts-ignore
       onPress={() => {
         router.push("/restaurantinfo");
       }}
@@ -153,7 +153,7 @@ function RestaurantCard(props: any) {
             borderRadius="lg"
             position="absolute"
             zIndex="-2"
-            w={{ base: 268, md: 268, lg: 268, xl: 255 }}
+            w={{ base: "100%", md: 268, lg: 268, xl: 255 }}
             h={185}
             source={{
               uri: props.item.imageUri,
@@ -179,7 +179,7 @@ function RestaurantCard(props: any) {
 
           <VStack flex={1} pl={2} pb={2} justifyContent="flex-end">
             <Center
-              w={150}
+              maxW={150}
               bg="#d92662"
               _text={{
                 color: "white",
@@ -191,7 +191,13 @@ function RestaurantCard(props: any) {
             </Center>
           </VStack>
         </VStack>
-        <Text color="coolGray.800" fontWeight="medium" fontSize="md">
+        <Text
+          color="coolGray.800"
+          fontWeight="medium"
+          fontSize="md"
+          w="100%"
+          px={1}
+        >
           {props.item.name}
         </Text>
         <HStack space={3} alignItems="center">

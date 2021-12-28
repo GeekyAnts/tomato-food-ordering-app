@@ -91,12 +91,16 @@ export default function Header(props: any) {
               />
             </HStack>
           </HStack>
-          <Text mr={4} color="coolGray.600" fontWeight="medium" fontSize="lg">
-            Log in
-          </Text>
-          <Text color="coolGray.600" fontWeight="medium" fontSize="lg">
-            Sign up
-          </Text>
+          <Pressable _web={{ cursor: "pointer" }}>
+            <Text mr={4} color="coolGray.600" fontWeight="medium" fontSize="lg">
+              Log in
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text color="coolGray.600" fontWeight="medium" fontSize="lg">
+              Sign up
+            </Text>
+          </Pressable>
         </HStack>
       </Hidden>
       <Hidden from="xl">

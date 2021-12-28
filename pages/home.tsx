@@ -71,23 +71,29 @@ function MainPageBanner(props: any) {
         mx={{ base: 10, md: 20, lg: 40 }}
         py={4}
       >
-        <HStack alignItems="center">
+        <Pressable flexDir="row" alignItems="center">
           <Icon as={FontAwesome} name="mobile" size="xs" color="white" />
           <Text color="white" fontWeight="medium" fontSize="md">
             Get the App
           </Text>
-        </HStack>
+        </Pressable>
 
         <HStack space="10" alignItems="center">
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Add restaurant
-          </Text>
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Log in
-          </Text>
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Sign up
-          </Text>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Add restaurant
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Log in
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Sign up
+            </Text>
+          </Pressable>
         </HStack>
       </HStack>
       <Center mt={20} w="100%">
@@ -120,7 +126,7 @@ function MainPageBanner(props: any) {
           mt={12}
           borderRadius="lg"
         >
-          <HStack space="1" alignItems="center">
+          <Pressable flexDir="row" alignItems="center">
             <Icon
               ml="2"
               as={Entypo}
@@ -129,7 +135,7 @@ function MainPageBanner(props: any) {
               _light={{ color: "rgb(255, 126, 139)" }}
               _dark={{ color: "coolGray.500" }}
             />
-            <Text color="coolGray.500" fontSize="md">
+            <Text color="coolGray.500" fontSize="md" mx="1">
               Bangla Sahib Gurdwara |
             </Text>
             <Icon
@@ -140,7 +146,7 @@ function MainPageBanner(props: any) {
               _dark={{ color: "coolGray.500" }}
             />
             <Divider h={5} w={0.5} ml={2} orientation="vertical" />
-          </HStack>
+          </Pressable>
           <HStack space="3" alignItems="center" flex={1}>
             <Icon
               ml={3}
