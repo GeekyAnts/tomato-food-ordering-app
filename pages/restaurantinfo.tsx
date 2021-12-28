@@ -165,7 +165,7 @@ function InfoWithTabs(props: any) {
             <Pressable
               key={index}
               p="2"
-              px={{ base: 2, md: 2, lg: 6, xl: 6 }}
+              px={{ base: 2, md: 2, lg: 6 }}
               pb="4"
               // @ts-ignore
               onPress={() => {
@@ -339,10 +339,7 @@ function OverviewTab(props: any) {
             <Text color="coolGray.800" fontWeight="medium" fontSize="md">
               Menu
             </Text>
-            <Pressable
-              //@ts-ignore
-              onPress={() => {}}
-            >
+            <Pressable>
               <HStack alignItems="center" space={2}>
                 <Text color="#FF7E8B" fontWeight="medium" fontSize="sm">
                   See all menus
@@ -1067,12 +1064,7 @@ function Details(props: any) {
         </Text>
       </HStack>
       <HStack mt={4} space="3" alignItems="center">
-        <Pressable
-          //@ts-ignore
-          onPress={() => {
-            console.log("hello");
-          }}
-        >
+        <Pressable>
           <HStack
             borderRadius="lg"
             space="3"
@@ -1088,12 +1080,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable
-          //@ts-ignore
-          onPress={() => {
-            console.log("hello");
-          }}
-        >
+        <Pressable>
           <HStack
             borderRadius="lg"
             space="3"
@@ -1115,12 +1102,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable
-          //@ts-ignore
-          onPress={() => {
-            console.log("hello");
-          }}
-        >
+        <Pressable>
           <HStack
             borderRadius="lg"
             space="3"
@@ -1142,12 +1124,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable
-          //@ts-ignore
-          onPress={() => {
-            console.log("hello");
-          }}
-        >
+        <Pressable>
           <HStack
             borderRadius="lg"
             space="3"
