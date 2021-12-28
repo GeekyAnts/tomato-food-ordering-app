@@ -103,15 +103,15 @@ const list = [
 export default function Restaurants() {
   const noColumn = useBreakpointValue({
     base: 2,
-    lg: 4,
+    lg: 3,
     md: 2,
     xl: 4,
   });
   return (
-    <VStack alignItems="center" bg="coolGray.50">
+    <VStack alignItems="center" bg="coolGray.50" w="100%">
       <Header />
 
-      <VStack alignItems="center" w={{ base: "90%", md: "90%", lg: "80%" }}>
+      <VStack alignItems="center" w={{ base: "90%", md: "90%", lg: "82%" }}>
         <Banner />
         <FlatList
           mt={8}
@@ -142,13 +142,18 @@ function RestaurantCard(props: any) {
         router.push("/restaurantinfo");
       }}
     >
-      <VStack w={268} mx={3} my={1} space={1}>
-        <VStack w={268} h={185}>
+      <VStack
+        w={{ base: 268, md: 268, lg: 268, xl: 255 }}
+        mx={3}
+        my={1}
+        space={1}
+      >
+        <VStack w={{ base: 268, md: 268, lg: 268, xl: 255 }} h={185}>
           <Image
             borderRadius="lg"
             position="absolute"
             zIndex="-2"
-            w={268}
+            w={{ base: 268, md: 268, lg: 268, xl: 255 }}
             h={185}
             source={{
               uri: props.item.imageUri,

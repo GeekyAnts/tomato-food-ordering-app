@@ -165,7 +165,7 @@ function InfoWithTabs(props: any) {
             <Pressable
               key={index}
               p="2"
-              px={{ base: 2, md: 2, lg: 4 }}
+              px={{ base: 2, md: 2, lg: 6, xl: 6 }}
               pb="4"
               // @ts-ignore
               onPress={() => {
@@ -199,6 +199,7 @@ function InfoWithTabs(props: any) {
       </HStack>
 
       {tabName == "Overview" ? <OverviewTab /> : null}
+      {tabName == "Book a Table" ? <BookTableTab /> : null}
       {/* {tabName == "Dining Out" ? <DiningOut /> : null}
         {tabName == "Nightlife" ? <Nightlife /> : null} */}
     </>
@@ -334,13 +335,27 @@ function OverviewTab(props: any) {
           <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
             About this place
           </Text>
-          <HStack justifyContent="space-between" alignItems="center">
+          <HStack mt={2} justifyContent="space-between" alignItems="center">
             <Text color="coolGray.800" fontWeight="medium" fontSize="md">
               Menu
             </Text>
-            <Text color="#FF7E8B" fontWeight="medium" fontSize="sm">
-              See all menus
-            </Text>
+            <Pressable
+              //@ts-ignore
+              onPress={() => {}}
+            >
+              <HStack alignItems="center" space={2}>
+                <Text color="#FF7E8B" fontWeight="medium" fontSize="sm">
+                  See all menus
+                </Text>
+                <Icon
+                  mt={1}
+                  as={<Octicons name="triangle-right" />}
+                  size="4"
+                  _light={{ color: "rgb(239, 79, 95)" }}
+                  _dark={{ color: "coolGray.500" }}
+                />
+              </HStack>
+            </Pressable>
           </HStack>
           <HStack space="3" alignItems="center" w="100%" mt={3}>
             <VStack>
@@ -461,6 +476,29 @@ function OverviewTab(props: any) {
         <LocaitonCard />
       </VStack>
     </HStack>
+  );
+}
+function BookTableTab(props: any) {
+  return (
+    <VStack w={{ base: "100%", md: "100%", lg: "100%" }}>
+      <VStack
+        my={{ base: 4, md: 4 }}
+        w="80%"
+        shadow={4}
+        mx="4"
+        borderRadius={"xl"}
+        py={{ base: 4, md: 4, lg: 6, xl: 8 }}
+        px="4"
+      >
+        <Text color="coolGray.800" textAlign="center" fontSize="md">
+          Oops, no availability found for Side Bar.
+        </Text>
+        <Text color="coolGray.800" textAlign="center" fontSize="md">
+          Please contact the restaurant directly at +91 8032974626 or try again
+          later.
+        </Text>
+      </VStack>
+    </VStack>
   );
 }
 function ReviewHighlights(props: any) {
@@ -584,8 +622,8 @@ function FoodBloggerCard(props: any) {
       py={2}
       justifyContent="space-between"
     >
-      <VStack>
-        <Text mt={4} color="coolGray.800" fontWeight="medium" fontSize="xl">
+      <VStack py={2}>
+        <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
           Are you a food blogger?
         </Text>
         <HStack alignItems={"center"} space="2" mt="1">
@@ -940,14 +978,18 @@ function Details(props: any) {
   return (
     <VStack w="100%">
       <HStack justifyContent="space-between" alignItems="center" w="100%">
-        <Text color="coolGray.800" fontWeight="medium" fontSize="3xl">
+        <Text
+          color="coolGray.800"
+          fontWeight="medium"
+          fontSize={{ base: "3xl", md: "3xl", lg: "4xl", xl: "5xl" }}
+        >
           Sidecar
         </Text>
         <HStack space="10" alignItems="center">
           <HStack space="2" alignItems="center">
             <HStack
-              space={1}
               px={1}
+              mt={2}
               alignItems="center"
               borderRadius="lg"
               bg="#267e3e"
@@ -964,12 +1006,11 @@ function Details(props: any) {
               />
             </HStack>
             <VStack
-              py={2}
               borderBottomWidth={1}
               borderBottomColor="coolGray.600"
               borderBottomStyle="dashed"
             >
-              <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
+              <Text color="coolGray.800" fontWeight="medium" fontSize="lg">
                 335
               </Text>
               <Text color="coolGray.800" fontWeight="medium" fontSize="xs">
@@ -979,7 +1020,7 @@ function Details(props: any) {
           </HStack>
           <HStack space="2" alignItems="center">
             <HStack
-              space={1}
+              mt={2}
               px={1}
               alignItems="center"
               borderRadius="lg"
@@ -997,13 +1038,12 @@ function Details(props: any) {
               />
             </HStack>
             <VStack
-              py={2}
               borderBottomWidth={1}
               borderBottomColor="coolGray.600"
               borderBottomStyle="dashed"
             >
-              <Text color="coolGray.800" fontWeight="medium" fontSize="xl">
-                335
+              <Text color="coolGray.800" fontWeight="medium" fontSize="lg">
+                423
               </Text>
               <Text color="coolGray.800" fontWeight="medium" fontSize="xs">
                 Delivery Reviews
@@ -1027,85 +1067,107 @@ function Details(props: any) {
         </Text>
       </HStack>
       <HStack mt={4} space="3" alignItems="center">
-        <HStack
-          borderRadius="lg"
-          space="3"
-          px={4}
-          py={2}
-          bg="#EF4F47"
-          alignItems="center"
+        <Pressable
+          //@ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
         >
-          <Icon
-            color="white"
-            fontWeight="medium"
-            as={Entypo}
-            size="xs"
-            name="star-outlined"
-          />
-          <Text color="coolGray.50" fontWeight="normal" fontSize="md">
-            Add Review
-          </Text>
-        </HStack>
-        <HStack
-          borderRadius="lg"
-          space="3"
-          px={4}
-          py={2}
-          borderWidth={1}
-          borderColor="coolGray.400"
-          alignItems="center"
+          <HStack
+            borderRadius="lg"
+            space="3"
+            px={4}
+            py={2}
+            bg="#EF4F47"
+            alignItems="center"
+          >
+            <Icon color="white" as={Entypo} size="xs" name="star-outlined" />
+            <Text color="coolGray.50" fontWeight="normal" fontSize="md">
+              Add Review
+            </Text>
+          </HStack>
+        </Pressable>
+
+        <Pressable
+          //@ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
         >
-          <Icon
-            color="#EF4F47"
-            fontWeight="medium"
-            as={MaterialCommunityIcons}
-            size="xs"
-            name="directions"
-          />
-          <Text color="coolGray.600" fontWeight="normal" fontSize="md">
-            Direction
-          </Text>
-        </HStack>
-        <HStack
-          borderRadius="lg"
-          space="3"
-          px={4}
-          py={2}
-          borderWidth={1}
-          borderColor="coolGray.400"
-          alignItems="center"
+          <HStack
+            borderRadius="lg"
+            space="3"
+            px={4}
+            py={2}
+            borderWidth={1}
+            borderColor="coolGray.400"
+            alignItems="center"
+          >
+            <Icon
+              color="#EF4F47"
+              as={MaterialCommunityIcons}
+              size="sm"
+              name="directions"
+            />
+            <Text color="coolGray.600" fontWeight="normal" fontSize="md">
+              Direction
+            </Text>
+          </HStack>
+        </Pressable>
+
+        <Pressable
+          //@ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
         >
-          <Icon
-            color="#EF4F47"
-            fontWeight="medium"
-            as={MaterialCommunityIcons}
-            size="xs"
-            name="bookmark-plus-outline"
-          />
-          <Text color="coolGray.600" fontWeight="normal" fontSize="md">
-            Bookmark
-          </Text>
-        </HStack>
-        <HStack
-          borderRadius="lg"
-          space="3"
-          px={4}
-          py={2}
-          borderWidth={1}
-          borderColor="coolGray.400"
-          alignItems="center"
+          <HStack
+            borderRadius="lg"
+            space="3"
+            px={4}
+            py={2}
+            borderWidth={1}
+            borderColor="coolGray.400"
+            alignItems="center"
+          >
+            <Icon
+              color="#EF4F47"
+              as={MaterialCommunityIcons}
+              size="sm"
+              name="bookmark-plus-outline"
+            />
+            <Text color="coolGray.600" fontWeight="normal" fontSize="md">
+              Bookmark
+            </Text>
+          </HStack>
+        </Pressable>
+
+        <Pressable
+          //@ts-ignore
+          onPress={() => {
+            console.log("hello");
+          }}
         >
-          <Icon
-            color="#EF4F47"
-            fontWeight="medium"
-            as={FontAwesome}
-            size="xs"
-            name="share"
-          />
-          <Text color="coolGray.600" fontWeight="normal" fontSize="md">
-            Share
-          </Text>
-        </HStack>
+          <HStack
+            borderRadius="lg"
+            space="3"
+            px={4}
+            py={2}
+            borderWidth={1}
+            borderColor="coolGray.400"
+            alignItems="center"
+          >
+            <Icon
+              color="#EF4F47"
+              as={MaterialCommunityIcons}
+              size="sm"
+              name="share-outline"
+            />
+            <Text color="coolGray.600" fontWeight="normal" fontSize="md">
+              Share
+            </Text>
+          </HStack>
+        </Pressable>
       </HStack>
     </VStack>
   );
@@ -1159,7 +1221,7 @@ function InfoBanner(props: any) {
                 fontWeight="medium"
                 fontSize="md"
               >
-                Get the App
+                View Gallery
               </Text>
             </Center>
           </VStack>
@@ -1180,7 +1242,7 @@ function InfoBanner(props: any) {
               w="100%"
               h={180}
               source={{
-                uri: "https://b.zmtcdn.com/data/pictures/4/18462574/c41e6fa97d1c6253994fa9fd75bd9edc_featured_v2.jpg?output-format=webp",
+                uri: "https://b.zmtcdn.com/data/reviews_photos/ce1/9da072eaafa990d66f505d5ce4ba7ce1_1577375852.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
               }}
               alt="Alternate Text"
             />
@@ -1189,8 +1251,8 @@ function InfoBanner(props: any) {
                 position="absolute"
                 w="100%"
                 h="100%"
-                bg="coolGray.500"
-                opacity={0.8}
+                bg="coolGray.200"
+                opacity={0.97}
                 zIndex="-1"
               ></Center>
               <VStack alignItems="center">

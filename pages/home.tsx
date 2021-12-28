@@ -12,7 +12,13 @@ import {
   Pressable,
 } from "native-base";
 import { useRouter } from "next/router";
-import { AntDesign, Entypo, MaterialIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Entypo,
+  FontAwesome,
+  FontAwesome5,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import Footer from "../components/Footer";
 const list = [
   {
@@ -65,9 +71,13 @@ function MainPageBanner(props: any) {
         mx={{ base: 10, md: 20, lg: 40 }}
         py={4}
       >
-        <Text color="white" fontWeight="medium" fontSize="md">
-          Get the App
-        </Text>
+        <HStack alignItems="center">
+          <Icon as={FontAwesome} name="mobile" size="xs" color="white" />
+          <Text color="white" fontWeight="medium" fontSize="md">
+            Get the App
+          </Text>
+        </HStack>
+
         <HStack space="10" alignItems="center">
           <Text color="white" fontWeight="medium" fontSize="md">
             Add restaurant

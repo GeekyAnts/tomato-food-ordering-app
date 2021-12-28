@@ -38,6 +38,9 @@ export default function Header(props: any) {
           </Pressable>
 
           <HStack
+            borderWidth={1}
+            borderColor="coolGray.200"
+            shadow={1}
             mr={4}
             bg="white"
             space="3"
