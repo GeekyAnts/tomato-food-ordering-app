@@ -71,23 +71,29 @@ function MainPageBanner(props: any) {
         mx={{ base: 10, md: 20, lg: 40 }}
         py={4}
       >
-        <HStack alignItems="center">
+        <Pressable flexDir="row" alignItems="center">
           <Icon as={FontAwesome} name="mobile" size="xs" color="white" />
           <Text color="white" fontWeight="medium" fontSize="md">
             Get the App
           </Text>
-        </HStack>
+        </Pressable>
 
         <HStack space="10" alignItems="center">
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Add restaurant
-          </Text>
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Log in
-          </Text>
-          <Text color="white" fontWeight="medium" fontSize="md">
-            Sign up
-          </Text>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Add restaurant
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Log in
+            </Text>
+          </Pressable>
+          <Pressable>
+            <Text color="white" fontWeight="medium" fontSize="md">
+              Sign up
+            </Text>
+          </Pressable>
         </HStack>
       </HStack>
       <Center mt={20} w="100%">
