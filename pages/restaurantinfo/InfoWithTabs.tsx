@@ -19,6 +19,7 @@ import ReviewCard from "./ReviewCard";
 import MoreInfoItem from "./MoreInfoItem";
 import FoodBloggerCard from "./FoodBloggerCard";
 import CuisineItem from "./CuisineItem";
+import { listType, tabListType } from "../../types/restaurants";
 
 const list = [
   {
@@ -101,7 +102,8 @@ const list = [
     deliverhyReview: 4.5,
     address: "Bubble Tea, Healthy Food, Italian, Salad, Fast Food,",
   },
-];
+] as listType[];
+
 const TabList = [
   {
     name: "Overview",
@@ -121,7 +123,7 @@ const TabList = [
   {
     name: "Book a Table",
   },
-];
+] as tabListType[];
 const cuisineItemList = ["Continental", "Asian", "Beverages"];
 
 function InfoWithTabs() {
@@ -129,7 +131,7 @@ function InfoWithTabs() {
   return (
     <>
       <HStack mt={3} w="100%">
-        {TabList.map((item, index) => {
+        {TabList.map((item: tabListType, index: any) => {
           return (
             <Pressable
               key={index}
@@ -314,7 +316,7 @@ function OverviewTab(props: any) {
             </Text>
 
             <HStack alignItems="center" w="100%" space={4} pt={2}>
-              {list.splice(0, 2).map((item, index) => {
+              {list.splice(0, 2).map((item: listType, index: any) => {
                 return <RestaurantCard item={item} key={index} />;
               })}
             </HStack>

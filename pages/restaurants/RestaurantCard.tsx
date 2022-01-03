@@ -10,8 +10,13 @@ import {
   Pressable,
 } from "native-base";
 import { useRouter } from "next/router";
+import { listType } from "../../types/restaurants";
 
-function RestaurantCard(props: any) {
+type PropType = {
+  item: listType;
+};
+
+function RestaurantCard(props: PropType) {
   const router = useRouter();
   return (
     <Pressable
@@ -30,11 +35,11 @@ function RestaurantCard(props: any) {
             w="100%"
             h={185}
             source={{
-              uri: props.item.imageUri,
+              uri: props.item?.imageUri,
             }}
             alt="Alternate Text"
           />
-          {props.item.featured ? (
+          {props.item?.featured ? (
             <HStack pl={2} pt={2} space="1" alignItems="center">
               <Center w={6} h={6} bg="red.500" borderRadius="full">
                 <Icon
@@ -66,7 +71,7 @@ function RestaurantCard(props: any) {
           </VStack>
         </VStack>
         <Text color="coolGray.800" fontWeight="medium" fontSize="md" w="100%">
-          {props.item.name}
+          {props.item?.name}
         </Text>
         <HStack space={3} alignItems="center">
           <HStack
@@ -77,7 +82,7 @@ function RestaurantCard(props: any) {
             bg="success.700"
           >
             <Text color="white" fontWeight="medium" fontSize="sm">
-              {props.item.dininingReviw}
+              {props.item?.dininingReviw}
             </Text>
             <Icon
               color="white"
@@ -98,7 +103,7 @@ function RestaurantCard(props: any) {
             bg="success.700"
           >
             <Text color="white" fontWeight="medium" fontSize="sm">
-              {props.item.deliverhyReview}
+              {props.item?.deliverhyReview}
             </Text>
             <Icon
               color="white"
@@ -113,7 +118,7 @@ function RestaurantCard(props: any) {
           </Text>
         </HStack>
         <Text color="coolGray.800" fontWeight="normal" fontSize="md">
-          {props.item.address}
+          {props.item?.address}
         </Text>
       </VStack>
     </Pressable>
