@@ -1,3 +1,2 @@
 Type errors
- -  Pressable -> onPress
- -  ScrollView -> horizontal 
+ -  Radio -> _checked

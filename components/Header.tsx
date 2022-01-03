@@ -19,35 +19,33 @@ export default function Header(props: any) {
   return (
     <Box w="100%" alignItems="center">
       <Hidden from="base" till="xl">
-        <HStack mt={2} space="3" alignItems="center" w="80%">
+        <HStack mt="2" space="3" alignItems="center" w="80%">
           <Pressable
-            //@ts-ignore
             onPress={() => {
               router.push("/");
             }}
-            mr={6}
+            mr="6"
             w={184}
             h={36}
           >
             <Image
-              width="184px"
-              height="36px"
+              width={184}
+              height={36}
               src={"/images/tomato.png"}
               alt="Alternate Text"
             />
           </Pressable>
 
           <HStack
-            borderWidth={1}
+            borderWidth="1"
             borderColor="coolGray.200"
-            shadow={1}
-            mr={4}
+            mr="4"
             bg="white"
             space="3"
             alignItems="center"
             borderRadius="lg"
             w="65%"
-            py={2}
+            py="2"
           >
             <HStack space="1" alignItems="center">
               <Icon
@@ -55,8 +53,7 @@ export default function Header(props: any) {
                 as={Entypo}
                 name="location-pin"
                 size="6"
-                _light={{ color: "rgb(255, 126, 139)" }}
-                _dark={{ color: "coolGray.500" }}
+                color="cyanZomato.200"
               />
               <Text color="coolGray.500" fontSize="md">
                 Bangla Sahib Gurdwara |
@@ -65,19 +62,17 @@ export default function Header(props: any) {
                 as={AntDesign}
                 name="caretdown"
                 size="3"
-                _light={{ color: "coolGray.600" }}
-                _dark={{ color: "coolGray.500" }}
+                color="coolGray.600"
               />
-              <Divider h={5} w={0.5} ml={2} orientation="vertical" />
+              <Divider h="5" w="0.5" ml="2" orientation="vertical" />
             </HStack>
             <HStack space="3" alignItems="center" flex={1}>
               <Icon
-                ml={3}
+                ml="3"
                 as={AntDesign}
                 name="search1"
                 size="5"
-                _light={{ color: "coolGray.500" }}
-                _dark={{ color: "coolGray.500" }}
+                color="coolGray.500"
               />
               <Input
                 _hover={{ bg: "white" }}
@@ -85,14 +80,14 @@ export default function Header(props: any) {
                 color="coolGray.500"
                 fontSize="md"
                 flex={1}
-                borderWidth={0}
+                borderWidth="0"
                 outline="undefined"
                 placeholder="Search for restaurant, cuisine or a dish"
               />
             </HStack>
           </HStack>
           <Pressable _web={{ cursor: "pointer" }}>
-            <Text mr={4} color="coolGray.600" fontWeight="medium" fontSize="lg">
+            <Text mr="4" color="coolGray.600" fontWeight="medium" fontSize="lg">
               Log in
             </Text>
           </Pressable>
@@ -105,38 +100,37 @@ export default function Header(props: any) {
       </Hidden>
       <Hidden from="xl">
         <HStack
-          py={2}
-          mt={2}
+          py="2"
+          mt="2"
           space="3"
           justifyContent="space-between"
           alignItems="center"
           w="100%"
         >
-          <Center flex={1} ml={8}>
+          <Center flex={1} ml="8">
             <Pressable
-              //@ts-ignore
               onPress={() => {
                 router.push("/");
               }}
             >
               <Image
-                width="184px"
-                height="36px"
+                width={48}
+                height={9}
                 src={"/images/tomato.png"}
                 alt="Alternate Text"
               />
             </Pressable>
           </Center>
           <Center
-            w={9}
-            h={9}
-            mr={8}
-            borderWidth={1}
+            w="9"
+            h="9"
+            mr="8"
+            borderWidth="1"
             borderColor="coolGray.300"
             borderRadius="full"
           >
             <Icon
-              color="#ef4f5f"
+              color="cyanZomato.500"
               fontWeight="medium"
               as={Ionicons}
               size="xs"
@@ -145,7 +139,7 @@ export default function Header(props: any) {
           </Center>
         </HStack>
       </Hidden>
-      <Divider mt={2} mb={2} />
+      <Divider mt="2" mb="2" />
     </Box>
   );
 }

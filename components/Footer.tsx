@@ -37,36 +37,32 @@ const Links_ForYou = ["Privacy", "Terms", "Security", "Sitemap"];
 export default function Footer(props: any) {
   return (
     <Box
-      bg="#F8F8F8"
+      bg="coolGray.100"
       py="5"
       w="100%"
       px={{ base: 2 }}
-      mt={4}
-      alignItems={"center"}
+      mt="4"
+      alignItems="center"
     >
       <VStack w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}>
         <HStack
           mb={{ base: 5, md: 8 }}
           alignItems={{ base: "flex-start", md: "center" }}
-          justifyContent={"space-between"}
+          justifyContent="space-between"
           flexDirection={{ base: "column", md: "row" }}
         >
-          <Text
-            fontSize={"36px"}
-            fontWeight={"extrabold"}
-            mb={{ base: 2, md: 0 }}
-          >
+          <Text fontSize="4xl" fontWeight="extrabold" mb={{ base: 2, md: 0 }}>
             Tomato
           </Text>
-          <HStack alignItems={"center"} space="4">
+          <HStack alignItems="center" space="4">
             <HStack
               space="1"
               py="1"
               px="1"
-              alignItems={"center"}
-              borderWidth={"1"}
-              borderColor={"coolGray.400"}
-              borderRadius={"4"}
+              alignItems="center"
+              borderWidth="1"
+              borderColor="coolGray.400"
+              borderRadius="4"
             >
               <Image
                 source={{
@@ -78,17 +74,14 @@ export default function Footer(props: any) {
                 mr="2"
                 ml="1"
               />
-              <Text fontWeight={"normal"} fontSize={"18px"}>
+              <Text fontWeight="normal" fontSize="lg">
                 India
               </Text>
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
                   size="5"
-                  _light={{ color: "coolGray.900" }}
-                  _dark={{ color: "coolGray.500" }}
+                  color="coolGray.900"
                 />
               </Pressable>
             </HStack>
@@ -96,20 +89,19 @@ export default function Footer(props: any) {
               space="1"
               py="1"
               px="1"
-              alignItems={"center"}
-              borderWidth={"1"}
-              borderColor={"coolGray.400"}
-              borderRadius={"4"}
+              alignItems="center"
+              borderWidth="1"
+              borderColor="coolGray.400"
+              borderRadius="4"
             >
               <Icon
                 as={<SimpleLineIcons name="globe" />}
                 size="4"
-                _light={{ color: "coolGray.900" }}
-                _dark={{ color: "coolGray.500" }}
+                color="coolGray.900"
                 mr="1"
                 ml="1"
               />
-              <Text fontWeight={"normal"} fontSize={"18px"}>
+              <Text fontWeight="normal" fontSize="lg">
                 English
               </Text>
 
@@ -117,8 +109,7 @@ export default function Footer(props: any) {
                 <Icon
                   as={<MaterialCommunityIcons name="chevron-down" />}
                   size="5"
-                  _light={{ color: "coolGray.900" }}
-                  _dark={{ color: "coolGray.500" }}
+                  color="coolGray.900"
                 />
               </Pressable>
             </HStack>
@@ -129,13 +120,8 @@ export default function Footer(props: any) {
           mr="16"
           flexDirection={{ base: "column", lg: "row" }}
         >
-          <VStack mb="4" space="6px">
-            <Text
-              mb="6px"
-              fontSize={"sm"}
-              fontWeight={"medium"}
-              letterSpacing={"2xl"}
-            >
+          <VStack mb="4" space={2}>
+            <Text mb={2} fontSize="sm" fontWeight="medium" letterSpacing="2xl">
               COMPANY
             </Text>
             {Links_Company.map((item, index) => {
@@ -145,13 +131,13 @@ export default function Footer(props: any) {
                   href="#"
                   isUnderlined={false}
                   _text={{
-                    color: "#696969",
+                    color: "coolGray.500",
                     fontSize: "sm",
                     fontWeight: "light",
                   }}
                   _hover={{
                     _text: {
-                      color: "rgb(28, 28, 28)",
+                      color: "grayZomato.700",
                     },
                   }}
                 >
@@ -160,13 +146,8 @@ export default function Footer(props: any) {
               );
             })}
           </VStack>
-          <VStack mb="4" space="6px">
-            <Text
-              mb="6px"
-              fontSize={"sm"}
-              fontWeight={"medium"}
-              letterSpacing={"2xl"}
-            >
+          <VStack mb="4" space={2}>
+            <Text mb={2} fontSize="sm" fontWeight="medium" letterSpacing="2xl">
               FOR FOODIES
             </Text>
             {Links_ForFoodies.map((item, index) => {
@@ -176,13 +157,13 @@ export default function Footer(props: any) {
                   href="#"
                   isUnderlined={false}
                   _text={{
-                    color: "#696969",
+                    color: "coolGray.500",
                     fontSize: "sm",
                     fontWeight: "light",
                   }}
                   _hover={{
                     _text: {
-                      color: "rgb(28, 28, 28)",
+                      color: "grayZomato.700",
                     },
                   }}
                 >
@@ -192,12 +173,12 @@ export default function Footer(props: any) {
             })}
           </VStack>
           <VStack>
-            <VStack mb="4" space="6px">
+            <VStack mb="4" space={2}>
               <Text
-                mb="6px"
-                fontSize={"sm"}
-                fontWeight={"medium"}
-                letterSpacing={"2xl"}
+                mb={2}
+                fontSize="sm"
+                fontWeight="medium"
+                letterSpacing="2xl"
               >
                 FOR RESTAURANTS
               </Text>
@@ -208,13 +189,13 @@ export default function Footer(props: any) {
                     href="#"
                     isUnderlined={false}
                     _text={{
-                      color: "#696969",
+                      color: "coolGray.500",
                       fontSize: "sm",
                       fontWeight: "light",
                     }}
                     _hover={{
                       _text: {
-                        color: "rgb(28, 28, 28)",
+                        color: "grayZomato.700",
                       },
                     }}
                   >
@@ -223,12 +204,12 @@ export default function Footer(props: any) {
                 );
               })}
             </VStack>
-            <VStack mb="4" space="6px" mt="3">
+            <VStack mb="4" space={2} mt="3">
               <Text
-                mb="6px"
-                fontSize={"sm"}
-                fontWeight={"medium"}
-                letterSpacing={"2xl"}
+                mb={2}
+                fontSize="sm"
+                fontWeight="medium"
+                letterSpacing="2xl"
               >
                 FOR ENTERPRISES
               </Text>
@@ -239,13 +220,13 @@ export default function Footer(props: any) {
                     href="#"
                     isUnderlined={false}
                     _text={{
-                      color: "#696969",
+                      color: "coolGray.500",
                       fontSize: "sm",
                       fontWeight: "light",
                     }}
                     _hover={{
                       _text: {
-                        color: "rgb(28, 28, 28)",
+                        color: "grayZomato.700",
                       },
                     }}
                   >
@@ -255,13 +236,8 @@ export default function Footer(props: any) {
               })}
             </VStack>
           </VStack>
-          <VStack mb="4" space="6px">
-            <Text
-              mb="6px"
-              fontSize={"sm"}
-              fontWeight={"medium"}
-              letterSpacing={"2xl"}
-            >
+          <VStack mb="4" space={2}>
+            <Text mb={2} fontSize="sm" fontWeight="medium" letterSpacing="2xl">
               FOR YOU
             </Text>
             {Links_ForYou.map((item, index) => {
@@ -271,13 +247,13 @@ export default function Footer(props: any) {
                   href="#"
                   isUnderlined={false}
                   _text={{
-                    color: "#696969",
+                    color: "coolGray.500",
                     fontSize: "sm",
                     fontWeight: "light",
                   }}
                   _hover={{
                     _text: {
-                      color: "rgb(28, 28, 28)",
+                      color: "grayZomato.700",
                     },
                   }}
                 >
@@ -286,92 +262,69 @@ export default function Footer(props: any) {
               );
             })}
           </VStack>
-          <VStack mb="4" space="6px" pr="8">
-            <Text
-              mb="6px"
-              fontSize={"sm"}
-              fontWeight={"medium"}
-              letterSpacing={"2xl"}
-            >
+          <VStack mb="4" space={2} pr="8">
+            <Text mb={2} fontSize="sm" fontWeight="medium" letterSpacing="2xl">
               SOCIAL LINKS
             </Text>
             <HStack space="2">
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Icon
                   size="6"
                   as={Entypo}
                   name="facebook-with-circle"
-                  _light={{ color: "coolGray.900" }}
-                  _dark={{ color: "coolGray.500" }}
+                  color="coolGray.900"
                 />
               </Pressable>
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Icon
                   size="6"
                   as={Entypo}
                   name="twitter-with-circle"
-                  _light={{ color: "coolGray.900" }}
-                  _dark={{ color: "coolGray.500" }}
+                  color="coolGray.900"
                 />
               </Pressable>
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Icon
                   size="6"
                   as={Entypo}
                   name="instagram-with-circle"
-                  _light={{ color: "coolGray.900" }}
-                  _dark={{ color: "coolGray.500" }}
+                  color="coolGray.900"
                 />
               </Pressable>
             </HStack>
             <VStack mt="2" space={{ base: "1", lg: 0 }}>
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Image
                   source={{
                     uri: "https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png",
                   }}
                   alt="Alternate Text"
                   resizeMode="contain"
-                  w={{ base: "150px", lg: "100%" }}
-                  h="50px"
+                  w={{ base: 40, lg: "100%" }}
+                  h={12}
                 />
               </Pressable>
-              <Pressable
-              //@ts-ignore
-              >
+              <Pressable>
                 <Image
                   source={{
                     uri: "https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png",
                   }}
                   alt="Alternate Text"
                   resizeMode="contain"
-                  w={{ base: "150px", lg: "100%" }}
-                  h="50px"
+                  w={{ base: 40, lg: "100%" }}
+                  h={12}
                 />
               </Pressable>
             </VStack>
           </VStack>
         </HStack>
-        <Divider
-          mt="8"
-          width="100%"
-          _light={{ bg: "coolGray.400" }}
-          _dark={{ bg: "coolGray.400" }}
-        />
+        <Divider mt="8" width="100%" bg="coolGray.400" />
         <HStack mt="6" mb="3">
           <Text
-            fontSize={"13px"}
-            fontWeight={"light"}
-            lineHeight={"17px"}
-            color="#4F4F4F"
+            fontSize="xs"
+            fontWeight="light"
+            lineHeight="16"
+            color="grayZomato.600"
           >
             By continuing past this page, you agree to our Terms of Service,
             Cookie Policy, Privacy Policy and Content Policies. All trademarks
