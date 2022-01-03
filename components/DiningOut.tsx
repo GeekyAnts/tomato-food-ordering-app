@@ -1,12 +1,8 @@
 import React from "react";
 import {
   Box,
-  Button,
-  Divider,
-  Hidden,
   HStack,
   Icon,
-  Input,
   Link,
   Text,
   VStack,
@@ -14,13 +10,7 @@ import {
   Pressable,
   ScrollView,
 } from "native-base";
-import {
-  Entypo,
-  MaterialCommunityIcons,
-  MaterialIcons,
-  Octicons,
-  SimpleLineIcons,
-} from "@expo/vector-icons";
+import { Octicons } from "@expo/vector-icons";
 import { useRouter } from "next/router";
 
 const card_data = [
@@ -72,34 +62,33 @@ export default function DiningOut(props: any) {
   const router = useRouter();
   return (
     <Box
-      bg="#F8F8F8"
       py="5"
-      borderTopWidth={"1px"}
-      borderTopColor={"coolGray.200"}
-      w="95%"
+      borderTopWidth="1"
+      borderTopColor="coolGray.200"
+      w={{ base: "95%", md: "90%", lg: "100%" }}
+      maxW="1362"
     >
       <VStack pb="6">
         <Text
-          fontSize={"30px"}
-          fontWeight={"medium"}
-          color="rgb(28, 28, 28)"
-          fontFamily={"Okra,Helvetica,sans-serif"}
-          mb="26px"
+          fontSize="3xl"
+          fontWeight="medium"
+          color="grayZomato.700"
+          fontFamily="Okra,Helvetica,sans-serif"
+          mb={6}
         >
           Collections
         </Text>
         <HStack
-          // alignItems={"center"}
           alignItems={{ base: "flex-start", lg: "center" }}
-          justifyContent={"space-between"}
+          justifyContent="space-between"
           mb="3"
           flexDirection={{ base: "column", lg: "row" }}
         >
           <Text
-            fontSize={"lg"}
-            fontWeight={"light"}
-            color="rgb(54, 54, 54)"
-            fontFamily={"Okra,Helvetica,sans-serif"}
+            fontSize="lg"
+            fontWeight="light"
+            color="grayZomato.650"
+            fontFamily="Okra,Helvetica,sans-serif"
           >
             Explore curated lists of top restaurants, cafes, pubs, and bars in
             Bengaluru, based on trends
@@ -109,14 +98,14 @@ export default function DiningOut(props: any) {
               href="#"
               isUnderlined={false}
               _text={{
-                color: "rgb(255, 126, 139)",
+                color: "cyanZomato.200",
                 fontSize: "md",
                 fontWeight: "light",
                 fontFamily: "Okra,Helvetica,sans-serif",
               }}
               _hover={{
                 _text: {
-                  color: "#EF4F5F",
+                  color: "cyanZomato.500",
                 },
               }}
             >
@@ -126,86 +115,82 @@ export default function DiningOut(props: any) {
               <Icon
                 as={<Octicons name="triangle-right" />}
                 size="4"
-                _light={{ color: "rgb(255, 126, 139)" }}
-                _dark={{ color: "coolGray.500" }}
+                color="cyanZomato.200"
               />
             </Link>
           </HStack>
         </HStack>
-        {/* @ts-ignore */}
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           {card_data.map((item: any, index: number) => {
             return (
               <HStack key={index} alignItems="center" mr="4">
                 <Pressable
-                  // @ts-ignore
                   onPress={() => {
                     router.push("/restaurants");
                   }}
                 >
-                  <Box
-                    borderRadius="lg"
-                    _light={{ bg: "primary.50" }}
-                    _dark={{ bg: "customGray" }}
-                  >
+                  <Box borderRadius="lg" bg="primary.50">
                     <Image
-                      height="320px"
-                      width="260px"
+                      height={80}
+                      width={64}
                       borderRadius={{ base: 4, md: 8 }}
                       source={item.imageUri}
                       alt="Image"
                     />
 
-                    <VStack
-                      position={"absolute"}
-                      bottom={"0"}
-                      // ml="4"
-                      // mb="2"
-                      flex="1"
-                      width={"100%"}
-                      //   p="4"
-                      alignItems="flex-start"
-                      backgroundColor={"rgba(50,50,50,0.6)"}
-                      borderBottomRadius="lg"
+                    <Box
+                      position="absolute"
+                      bottom="0"
+                      w="100%"
+                      top="0"
+                      justifyContent="flex-end"
+                      bg={{
+                        linearGradient: {
+                          colors: [
+                            "grayTransparentZomato.400",
+                            "grayTransparentZomato.600",
+                          ],
+                          start: [0, 0],
+                          end: [0, 1],
+                        },
+                      }}
                     >
-                      <Text
-                        ml="4"
-                        mb="2"
-                        fontSize="lg"
-                        fontWeight={"light"}
-                        fontFamily={"Okra,Helvetica,sans-serif"}
-                        textAlign="center"
-                        _dark={{ color: "coolGray.50" }}
-                        _light={{ color: "white" }}
-                      >
-                        {item.title}
-                      </Text>
-                      <HStack alignItems={"center"} space="2" ml="4" mb="2">
+                      <VStack alignItems="flex-start" borderBottomRadius="lg">
                         <Text
-                          fontSize="sm"
-                          fontWeight={"light"}
-                          fontFamily={"Okra,Helvetica,sans-serif"}
+                          ml="4"
+                          mb="2"
+                          fontSize="lg"
+                          fontWeight="light"
+                          fontFamily="Okra,Helvetica,sans-serif"
                           textAlign="center"
-                          _dark={{ color: "coolGray.50" }}
-                          _light={{ color: "white" }}
+                          color="white"
                         >
-                          {item.subtitle}
+                          {item.title}
                         </Text>
-                        <Icon
-                          as={<Octicons name="triangle-right" />}
-                          size="4"
-                          _light={{ color: "white" }}
-                          _dark={{ color: "coolGray.500" }}
-                        />
-                      </HStack>
-                    </VStack>
+                        <HStack alignItems="center" space="2" ml="4" mb="2">
+                          <Text
+                            fontSize="sm"
+                            fontWeight="light"
+                            fontFamily="Okra,Helvetica,sans-serif"
+                            textAlign="center"
+                            color="white"
+                          >
+                            {item.subtitle}
+                          </Text>
+                          <Icon
+                            as={<Octicons name="triangle-right" />}
+                            size="4"
+                            color="white"
+                          />
+                        </HStack>
+                      </VStack>
+                    </Box>
                   </Box>
                 </Pressable>
               </HStack>
             );
           })}
         </ScrollView>
-        {/* </ScrollView> */}
       </VStack>
     </Box>
   );

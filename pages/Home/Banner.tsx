@@ -11,48 +11,9 @@ import {
   Input,
   Pressable,
 } from "native-base";
-import { useRouter } from "next/router";
-import {
-  AntDesign,
-  Entypo,
-  FontAwesome,
-  FontAwesome5,
-  MaterialIcons,
-} from "@expo/vector-icons";
-import Footer from "../components/Footer";
-const list = [
-  {
-    imageUri:
-      "https://b.zmtcdn.com/webFrontend/64dffaa58ffa55a377cdf42b6a690e721585809275.png?fit=around|402:360&crop=402:360;*,*",
-    text: "Order Food Online",
-  },
-  {
-    imageUri:
-      "https://b.zmtcdn.com/webFrontend/95f005332f5b9e71b9406828b63335331585809309.png?fit=around|402:360&crop=402:360;*,*",
-    text: "Go out for a meal",
-  },
-  {
-    imageUri:
-      "https://b.zmtcdn.com/webFrontend/b256d0dd8a29f9e0623ecaaea910534d1585809352.png?fit=around|402:360&crop=402:360;*,*",
-    text: "Zomato Pro",
-  },
-  {
-    imageUri:
-      "https://b.zmtcdn.com/webFrontend/8ff4212b71b948ed5b6d2ce0d2bc99981594031410.png?fit=around|402:360&crop=402:360;*,*",
-    text: "Nightlife & Clubs",
-  },
-];
+import { AntDesign, Entypo, FontAwesome } from "@expo/vector-icons";
 
-export default function Home() {
-  return (
-    <VStack alignItems="center" w="100%" bg="coolGray.50">
-      <MainPageBanner />
-      <ZomatoCategories />
-      <Footer />
-    </VStack>
-  );
-}
-function MainPageBanner(props: any) {
+function Banner() {
   return (
     <VStack w="100%" h={500}>
       <Image
@@ -78,7 +39,7 @@ function MainPageBanner(props: any) {
           </Text>
         </Pressable>
 
-        <HStack space="10" alignItems="center">
+        <HStack space={{ base: "5", sm: "10" }} alignItems="center">
           <Pressable>
             <Text color="white" fontWeight="medium" fontSize="md">
               Add restaurant
@@ -98,8 +59,8 @@ function MainPageBanner(props: any) {
       </HStack>
       <Center mt={20} w="100%">
         <Image
-          width="300px"
-          height="60px"
+          width={80}
+          height={16}
           src={"/images/tomatoWhite.png"}
           alt="Alternate Text"
         />
@@ -132,8 +93,7 @@ function MainPageBanner(props: any) {
               as={Entypo}
               name="location-pin"
               size="6"
-              _light={{ color: "rgb(255, 126, 139)" }}
-              _dark={{ color: "coolGray.500" }}
+              color="red.400"
             />
             <Text color="coolGray.500" fontSize="md" mx="1">
               Bangla Sahib Gurdwara |
@@ -142,8 +102,7 @@ function MainPageBanner(props: any) {
               as={AntDesign}
               name="caretdown"
               size="3"
-              _light={{ color: "coolGray.600" }}
-              _dark={{ color: "coolGray.500" }}
+              color="coolGray.600"
             />
             <Divider h={5} w={0.5} ml={2} orientation="vertical" />
           </Pressable>
@@ -153,8 +112,7 @@ function MainPageBanner(props: any) {
               as={AntDesign}
               name="search1"
               size="5"
-              _light={{ color: "coolGray.500" }}
-              _dark={{ color: "coolGray.500" }}
+              color="coolGray.500"
             />
             <Input
               _hover={{ bg: "white" }}
@@ -164,7 +122,6 @@ function MainPageBanner(props: any) {
               flex={1}
               borderWidth={0}
               outline="undefined"
-              placeholder="Search for restaurant, cuisine or a dish"
             />
           </HStack>
         </HStack>
@@ -172,60 +129,5 @@ function MainPageBanner(props: any) {
     </VStack>
   );
 }
-function ZomatoCategories(props: any) {
-  const router = useRouter();
-  return (
-    <HStack
-      justifyContent="space-around"
-      mt={8}
-      w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
-      mx={{ base: 4 }}
-    >
-      {list.map((item, index) => {
-        return (
-          <Pressable
-            w="24%"
-            key={index}
-            //@ts-ignore
-            onPress={() => {
-              router.push("/goformeal");
-            }}
-          >
-            <Card item={item} />
-          </Pressable>
-        );
-      })}
-    </HStack>
-  );
-}
-function Card(props: any) {
-  return (
-    <VStack
-      w="100%"
-      alignItems="center"
-      borderWidth={1}
-      borderColor="coolGray.200"
-      borderRadius="lg"
-    >
-      <Image
-        borderTopLeftRadius="lg"
-        borderTopRightRadius="lg"
-        w="100%"
-        h={220}
-        source={{
-          uri: props.item.imageUri,
-        }}
-        alt="Alternate Text"
-      />
-      <Center
-        h={20}
-        py={2}
-        _text={{ fontSize: "lg", textAlign: "center" }}
-        color="#363636"
-        fontWeight="extrabold"
-      >
-        {props.item.text}
-      </Center>
-    </VStack>
-  );
-}
+
+export default Banner;
