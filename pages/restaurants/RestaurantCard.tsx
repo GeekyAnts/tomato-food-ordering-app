@@ -65,13 +65,7 @@ function RestaurantCard(props: any) {
             </Center>
           </VStack>
         </VStack>
-        <Text
-          color="coolGray.800"
-          fontWeight="medium"
-          fontSize="md"
-          w="100%"
-          px={1}
-        >
+        <Text color="coolGray.800" fontWeight="medium" fontSize="md" w="100%">
           {props.item.name}
         </Text>
         <HStack space={3} alignItems="center">

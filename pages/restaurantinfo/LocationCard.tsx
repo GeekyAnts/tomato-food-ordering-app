@@ -17,7 +17,7 @@ function LocationCard(prps: any) {
       my={{ base: 4, md: 4 }}
       w={80}
       shadow={4}
-      mx="4"
+      mx={{ base: "0", xl: "4" }}
       borderRadius="xl"
       py="4"
       px="4"
