@@ -29,7 +29,7 @@ export default function GoForMeal(props: any) {
     >
       <Header />
       <VStack w={{ base: "95%", md: "90%", lg: "80%" }} mt="2">
-        <HStack bg="coolGray.50" pt="2" w="100%" px="4">
+        <HStack bg="coolGray.50" pt="2" w="100%" px="4" mb="3">
           <Link
             isUnderlined={false}
             _text={{
@@ -90,14 +90,14 @@ export default function GoForMeal(props: any) {
                       uri: "https://b.zmtcdn.com/data/o2_assets/246bbd71fbba420d5996452be3024d351616150055.png?output-format=webp",
                     }}
                     alt="Alternate Text"
-                    w={8}
-                    h={8}
+                    w={{ base: 4, lg: 8 }}
+                    h={{ base: 4, lg: 8 }}
                     resizeMode="contain"
                   />
                 </Box>
                 <Text
                   fontWeight="medium"
-                  fontSize={{ base: "lg", lg: "xl" }}
+                  fontSize={{ base: "sm", md: "lg", lg: "xl" }}
                   color={tabName == "Delivery" ? "red.500" : "coolGray.600"}
                 >
                   Delivery
@@ -130,14 +130,14 @@ export default function GoForMeal(props: any) {
                       uri: "https://b.zmtcdn.com/data/o2_assets/30fa0a844f3ba82073e5f78c65c18b371616149662.png?output-format=webp",
                     }}
                     alt="Alternate Text"
-                    w={8}
-                    h={8}
+                    w={{ base: 4, lg: 8 }}
+                    h={{ base: 4, lg: 8 }}
                     resizeMode="contain"
                   />
                 </Box>
                 <Text
                   fontWeight="medium"
-                  fontSize={{ base: "lg", lg: "xl" }}
+                  fontSize={{ base: "sm", md: "lg", lg: "xl" }}
                   color={tabName == "Dining Out" ? "red.500" : "coolGray.600"}
                 >
                   Dining Out
@@ -155,6 +155,7 @@ export default function GoForMeal(props: any) {
               borderBottomColor={
                 tabName == "Nightlife" ? "red.400" : "coolGray.50"
               }
+              display={{ base: "none", sm: "flex" }}
             >
               <HStack alignItems={"center"}>
                 <Box
@@ -170,14 +171,14 @@ export default function GoForMeal(props: any) {
                       uri: "https://b.zmtcdn.com/data/o2_assets/01040767e4943c398e38e3592bb1ba8a1616150142.png?output-format=webphttps://b.zmtcdn.com/data/o2_assets/30fa0a844f3ba82073e5f78c65c18b371616149662.png?output-format=webp",
                     }}
                     alt="Alternate Text"
-                    w={8}
-                    h={8}
+                    w={{ base: 4, lg: 8 }}
+                    h={{ base: 4, lg: 8 }}
                     resizeMode="contain"
                   />
                 </Box>
                 <Text
                   fontWeight="medium"
-                  fontSize={{ base: "lg", lg: "xl" }}
+                  fontSize={{ base: "sm", md: "lg", lg: "xl" }}
                   color={tabName == "Nightlife" ? "red.500" : "coolGray.800"}
                 >
                   Nightlife
