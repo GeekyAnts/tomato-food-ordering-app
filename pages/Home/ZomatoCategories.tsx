@@ -1,7 +1,15 @@
 import React from "react";
 
 import { useRouter } from "next/router";
-import { Center, HStack, Image, Pressable, VStack } from "native-base";
+import {
+  Box,
+  Center,
+  FlatList,
+  Image,
+  Pressable,
+  useBreakpointValue,
+  VStack,
+} from "native-base";
 
 const list = [
   {
@@ -28,27 +36,35 @@ const list = [
 
 function ZomatoCategories() {
   const router = useRouter();
+  const noColumn = useBreakpointValue({
+    base: 2,
+    md: 4,
+  });
   return (
-    <HStack
-      justifyContent="space-around"
-      mt={8}
-      w={{ base: "95%", md: "80%", lg: "80%", xl: "80%" }}
-      mx={{ base: 4 }}
-    >
-      {list.map((item, index) => {
-        return (
-          <Pressable
-            w="24%"
-            key={index}
-            onPress={() => {
-              router.push("/goformeal");
-            }}
-          >
-            <Card item={item} />
-          </Pressable>
-        );
-      })}
-    </HStack>
+    <FlatList
+      w="90%"
+      mx="4"
+      mt="8"
+      numColumns={noColumn}
+      key={noColumn}
+      data={list}
+      keyExtractor={(item, index) => "key" + index}
+      ItemSeparatorComponent={() => <Box w="10" h="10" />}
+      columnWrapperStyle={{
+        justifyContent: "space-between",
+      }}
+      renderItem={({ item, index }) => (
+        <Pressable
+          key={index}
+          onPress={() => {
+            router.push("/goformeal");
+          }}
+          width={{ base: "49%", md: "22%" }}
+        >
+          <Card item={item} />
+        </Pressable>
+      )}
+    />
   );
 }
 
