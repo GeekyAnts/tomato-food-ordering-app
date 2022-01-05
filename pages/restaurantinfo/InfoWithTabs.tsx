@@ -9,6 +9,7 @@ import {
   Pressable,
   ScrollView,
   Hidden,
+  Stack,
 } from "native-base";
 import { Octicons } from "@expo/vector-icons";
 import LocationCard from "./LocationCard";
@@ -130,7 +131,7 @@ function InfoWithTabs() {
   const [tabName, setTabName] = React.useState("Overview");
   return (
     <>
-      <HStack mt={3} w="100%">
+      <HStack mt="6" w="100%" flexWrap="wrap">
         {TabList.map((item: tabListType, index: any) => {
           return (
             <Pressable
@@ -159,7 +160,9 @@ function InfoWithTabs() {
       </HStack>
 
       {tabName == "Overview" ? <OverviewTab /> : null}
+      {tabName == "Reviews" ? <ReviewCard /> : null}
       {tabName == "Book a Table" ? <BookTableTab /> : null}
+
       {/* {tabName == "Dining Out" ? <DiningOut /> : null}
             {tabName == "Nightlife" ? <Nightlife /> : null} */}
     </>
@@ -315,7 +318,13 @@ function OverviewTab(props: any) {
               OUR SPONSORS
             </Text>
 
-            <HStack alignItems="center" w="100%" space={4} pt={2}>
+            <HStack
+              alignItems="center"
+              w="100%"
+              space={4}
+              pt={2}
+              flexWrap="wrap"
+            >
               {list.splice(0, 2).map((item: listType, index: any) => {
                 return <RestaurantCard item={item} key={index} />;
               })}
