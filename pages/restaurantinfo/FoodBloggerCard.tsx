@@ -1,13 +1,14 @@
 import React from "react";
 import { Octicons } from "@expo/vector-icons";
-import { HStack, Icon, Link, Text, VStack } from "native-base";
+import { HStack, Icon, Link, Stack, Text, VStack } from "native-base";
 
 function FoodBloggerCard(props: any) {
   return (
-    <HStack
+    <Stack
+      direction={{ base: "column", sm: "row" }}
       mt={4}
       borderRadius="lg"
-      alignItems="center"
+      alignItems={{ base: "flex-start", sm: "center" }}
       w="100%"
       bg="coolGray.100"
       px={3}
@@ -61,7 +62,7 @@ function FoodBloggerCard(props: any) {
           color="white"
         />
       </Link>
-    </HStack>
+    </Stack>
   );
 }
 

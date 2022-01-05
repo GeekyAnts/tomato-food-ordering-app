@@ -1,11 +1,17 @@
 import React from "react";
-import { VStack, HStack, Icon, Text, Pressable } from "native-base";
+import { VStack, HStack, Icon, Text, Pressable, Stack } from "native-base";
 import { Entypo, MaterialCommunityIcons } from "@expo/vector-icons";
 
 function Details(props: any) {
   return (
     <VStack w="100%">
-      <HStack justifyContent="space-between" alignItems="center" w="100%">
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        justifyContent="space-between"
+        alignItems={{ base: "flex-start", md: "center" }}
+        w="100%"
+        space="3"
+      >
         <Text
           color="coolGray.800"
           fontWeight="medium"
@@ -13,7 +19,7 @@ function Details(props: any) {
         >
           Sidecar
         </Text>
-        <HStack space="10" alignItems="center">
+        <HStack space={{ base: "4", md: "10" }} alignItems="center">
           <HStack space="2" alignItems="center">
             <HStack
               px={1}
@@ -79,8 +85,13 @@ function Details(props: any) {
             </VStack>
           </HStack>
         </HStack>
-      </HStack>
-      <Text color="coolGray.700" fontWeight="normal" fontSize="lg">
+      </Stack>
+      <Text
+        color="coolGray.700"
+        fontWeight="normal"
+        fontSize="lg"
+        mt={{ base: "2", md: 0 }}
+      >
         Continental, Asian, Beverages
       </Text>
       <Text color="coolGray.400" fontWeight="normal" fontSize="lg">
@@ -94,8 +105,8 @@ function Details(props: any) {
           - Opens at 1pm
         </Text>
       </HStack>
-      <HStack mt={4} space="3" alignItems="center">
-        <Pressable>
+      <HStack mt={4} space="3" alignItems="center" flexWrap="wrap">
+        <Pressable mt="2" minW="140">
           <HStack
             borderRadius="lg"
             space="3"
@@ -111,7 +122,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable>
+        <Pressable mt="2" minW="140">
           <HStack
             borderRadius="lg"
             space="3"
@@ -133,7 +144,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable>
+        <Pressable mt="2" minW="140">
           <HStack
             borderRadius="lg"
             space="3"
@@ -155,7 +166,7 @@ function Details(props: any) {
           </HStack>
         </Pressable>
 
-        <Pressable>
+        <Pressable mt="2" minW="140">
           <HStack
             borderRadius="lg"
             space="3"
